@@ -1124,6 +1124,107 @@ body { font-family: var(--sans); color: var(--text); background: var(--white); o
   text-transform: uppercase;
 }
 
+/* ─── IDENTITY BUMP-OUT PANEL ─── */
+#identity-panel {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) translateX(-100%);
+  z-index: 9990;
+  width: 280px;
+  background: #0a1520;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 4px 0 32px rgba(0,0,0,0.4);
+  font-family: 'Courier New', Courier, monospace;
+  transition: transform 0.35s cubic-bezier(0.34,1.1,0.64,1);
+  overflow: hidden;
+}
+#identity-panel.open { transform: translateY(-50%) translateX(0); }
+.idp-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 12px 14px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.idp-title { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.9); font-family: var(--sans); }
+.idp-subtitle { font-size: 9px; color: rgba(255,255,255,0.35); letter-spacing: 0.06em; font-family: var(--sans); margin-top: 2px; }
+.idp-close { background: none; border: none; color: rgba(255,255,255,0.4); font-size: 16px; cursor: pointer; line-height: 1; padding: 0 0 0 8px; }
+.idp-close:hover { color: #fff; }
+.idp-body { padding: 12px 14px; max-height: 65vh; overflow-y: auto; }
+.idp-group { margin-bottom: 14px; }
+.idp-group-label { font-size: 8px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(0,211,230,0.8); margin-bottom: 7px; font-family: var(--sans); border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 4px; }
+.idp-row { display: flex; gap: 4px; margin-bottom: 3px; line-height: 1.5; flex-wrap: wrap; }
+.idp-key { color: rgba(255,255,255,0.45); font-size: 10px; }
+.idp-sep { color: rgba(255,255,255,0.2); font-size: 10px; }
+.idp-val { color: #a8d8a0; font-size: 10px; }
+.idp-val.hi { color: #4ade80; font-weight: 700; }
+.idp-val.warn { color: #fbbf24; }
+.idp-footer { padding: 8px 14px 12px; border-top: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: space-between; }
+.idp-resolve-time { font-size: 9px; color: rgba(74,222,128,0.8); font-family: var(--sans); display: flex; align-items: center; gap: 5px; }
+.idp-resolve-dot { width: 5px; height: 5px; border-radius: 50%; background: #4ade80; animation: pulse-dot 1.8s infinite; flex-shrink: 0; }
+.idp-no-match { padding: 20px 14px; text-align: center; color: rgba(255,255,255,0.3); font-size: 11px; font-family: var(--sans); font-style: italic; }
+.idp-auth-badge { display: inline-flex; align-items: center; gap: 5px; background: rgba(74,222,128,0.1); border: 1px solid rgba(74,222,128,0.25); border-radius: 3px; padding: 3px 8px; margin-bottom: 10px; font-family: var(--sans); font-size: 9px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #4ade80; }
+#identity-tab { position: fixed; top: 50%; left: 0; z-index: 9989; background: #0a1520; color: rgba(255,255,255,0.6); border-radius: 0 5px 5px 0; padding: 10px 7px; cursor: pointer; font-size: 9px; font-family: var(--sans); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; writing-mode: vertical-rl; text-orientation: mixed; transform: translateY(-50%) rotate(180deg); box-shadow: 2px 0 12px rgba(0,0,0,0.3); transition: background 0.2s; display: none; align-items: center; gap: 5px; border: none; }
+#identity-tab:hover { background: #1a2535; }
+#identity-tab.visible { display: flex; }
+.idp-tab-dot { width: 5px; height: 5px; border-radius: 50%; background: #4ade80; animation: pulse-dot 1.8s infinite; flex-shrink: 0; }
+
+/* ─── CART DRAWER ─── */
+#cart-drawer, #favorites-drawer {
+  position: fixed; top: 0; right: -460px; width: 440px; height: 100vh;
+  background: var(--white); z-index: 10001;
+  box-shadow: -4px 0 40px rgba(0,0,0,0.18);
+  transition: right 0.3s ease; display: flex; flex-direction: column;
+}
+#cart-drawer.open, #favorites-drawer.open { right: 0; }
+.drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 10000; display: none; }
+.drawer-overlay.open { display: block; }
+.drawer-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+.drawer-header h3 { font-family: var(--serif); font-size: 22px; font-weight: 400; letter-spacing: -0.01em; }
+.drawer-close { background: none; border: none; font-size: 22px; cursor: pointer; color: var(--text3); line-height: 1; padding: 4px; }
+.drawer-close:hover { color: var(--text); }
+.drawer-body { flex: 1; overflow-y: auto; padding: 20px 24px; }
+.drawer-footer { padding: 16px 24px; border-top: 1px solid var(--border); flex-shrink: 0; }
+.cart-loyalty-nudge { background: var(--off); border: 1px solid var(--border); padding: 14px; text-align: center; margin-bottom: 16px; }
+.cart-loyalty-nudge .cln-logo { font-family: var(--sans); font-size: 10px; font-style: italic; color: var(--text3); margin-bottom: 5px; letter-spacing: 0.04em; }
+.cart-loyalty-nudge p { font-family: var(--sans); font-size: 12px; color: var(--text); line-height: 1.5; margin-bottom: 10px; }
+.cart-loyalty-btns { display: flex; gap: 8px; }
+.cart-loyalty-btns button { flex: 1; padding: 9px; font-family: var(--sans); font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; border: 1px solid var(--primary); }
+.btn-csignin { background: var(--white); color: var(--primary); }
+.btn-cjoin { background: var(--primary); color: var(--white); }
+.cart-shipping-bar { margin-bottom: 16px; }
+.cart-shipping-bar p { font-family: var(--sans); font-size: 12px; color: var(--text3); margin-bottom: 5px; }
+.cart-shipping-bar p span { color: var(--text); font-weight: 500; }
+.cart-progress { height: 3px; background: var(--lt); border-radius: 2px; overflow: hidden; }
+.cart-progress-fill { height: 100%; background: var(--primary); border-radius: 2px; }
+.cart-item { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+.cart-item-photo { width: 76px; height: 96px; flex-shrink: 0; background: var(--lt); overflow: hidden; }
+.cart-item-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.cart-item-name { font-family: var(--sans); font-size: 12px; font-weight: 400; margin-bottom: 3px; line-height: 1.4; }
+.cart-item-meta { font-family: var(--sans); font-size: 11px; color: var(--text3); margin-bottom: 5px; }
+.cart-item-price { font-family: var(--sans); font-size: 13px; font-weight: 500; margin-bottom: 4px; }
+.cart-item-social { font-family: var(--sans); font-size: 11px; color: var(--text3); }
+.cart-summary-row { display: flex; justify-content: space-between; font-family: var(--sans); font-size: 13px; margin-bottom: 7px; }
+.cart-summary-row.total { font-weight: 600; border-top: 1px solid var(--border); padding-top: 10px; margin-top: 4px; }
+.cart-empty { text-align: center; padding: 40px 0; }
+.cart-empty-icon { font-size: 36px; margin-bottom: 14px; }
+.cart-empty h4 { font-family: var(--serif); font-size: 20px; margin-bottom: 8px; font-weight: 400; }
+.cart-empty p { font-family: var(--sans); font-size: 12px; color: var(--text3); margin-bottom: 20px; }
+.favorites-empty { text-align: center; padding: 40px 16px; }
+.favorites-empty-heart { font-size: 44px; margin-bottom: 14px; opacity: 0.25; }
+.favorites-empty h4 { font-family: var(--serif); font-size: 20px; margin-bottom: 8px; font-weight: 400; }
+.favorites-empty p { font-family: var(--sans); font-size: 12px; color: var(--text3); line-height: 1.6; }
+.favorites-signin { font-family: var(--sans); font-size: 12px; color: var(--text3); margin-top: 10px; }
+.favorites-signin a { color: var(--text); font-weight: 600; text-decoration: underline; cursor: pointer; }
+.fav-reco-title { font-family: var(--serif); font-size: 18px; font-weight: 400; margin: 16px 0 12px; }
+.favorites-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.fav-card { cursor: pointer; }
+.fav-photo { width: 100%; aspect-ratio: 2/3; background: var(--lt); overflow: hidden; margin-bottom: 7px; }
+.fav-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.fav-name { font-family: var(--sans); font-size: 11px; margin-bottom: 2px; line-height: 1.4; }
+.fav-price { font-family: var(--sans); font-size: 11px; color: var(--text3); }
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 1024px) {
   :root { --g: 28px; }
@@ -1181,11 +1282,12 @@ body { font-family: var(--sans); color: var(--text); background: var(--white); o
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         <input type="text" placeholder="Search">
       </div>
-      <button class="nav-action-btn" onclick="return false;">
+      <button class="nav-action-btn" onclick="openFavorites()">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
       </button>
-      <button class="nav-action-btn" onclick="return false;">
+      <button class="nav-action-btn" onclick="openCart()" style="position:relative;">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span id="cart-badge" style="display:none;position:absolute;top:-4px;right:-6px;background:#c83030;color:#fff;border-radius:50%;width:14px;height:14px;font-size:8px;font-weight:700;align-items:center;justify-content:center;">1</span>
       </button>
       <button class="nav-action-btn" onclick="openContactModal()" style="font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;">Sign In or Join</button>
     </div>
@@ -1648,6 +1750,52 @@ body { font-family: var(--sans); color: var(--text); background: var(--white); o
   </div>
 </div>
 
+<!-- DRAWER OVERLAY -->
+<div class="drawer-overlay" id="drawer-overlay" onclick="closeAllDrawers()"></div>
+
+<!-- IDENTITY BUMP-OUT PANEL -->
+<div id="identity-panel">
+  <div class="idp-header">
+    <div>
+      <div class="idp-title">Real-Time Identity Sample</div>
+      <div class="idp-subtitle">Merkury Consumer Identity — ANF Schema</div>
+    </div>
+    <button class="idp-close" onclick="closeIdentityPanel()">×</button>
+  </div>
+  <div class="idp-body" id="idp-body">
+    <div class="idp-no-match">Anonymous visitor — no match</div>
+  </div>
+  <div class="idp-footer">
+    <div class="idp-resolve-time">
+      <div class="idp-resolve-dot"></div>
+      <span id="idp-resolve-ms">Resolved in —</span>
+    </div>
+  </div>
+</div>
+<button id="identity-tab" onclick="openIdentityPanel()">
+  <div class="idp-tab-dot"></div>
+  Identity Sample
+</button>
+
+<!-- CART DRAWER -->
+<div id="cart-drawer">
+  <div class="drawer-header">
+    <h3 id="cart-title">Shopping Bag</h3>
+    <button class="drawer-close" onclick="closeCart()">×</button>
+  </div>
+  <div class="drawer-body" id="cart-body"></div>
+  <div class="drawer-footer" id="cart-footer"></div>
+</div>
+
+<!-- FAVORITES DRAWER -->
+<div id="favorites-drawer">
+  <div class="drawer-header">
+    <h3>My List</h3>
+    <button class="drawer-close" onclick="closeFavorites()">×</button>
+  </div>
+  <div class="drawer-body" id="favorites-body"></div>
+</div>
+
 <!-- PAGE INDICATOR -->
 <div class="page-indicator">
   <div class="pi-dot active" id="pi-0" onclick="showPage('home')"></div>
@@ -1702,9 +1850,11 @@ var MERKURY_PAYLOADS = {
         // Group 1 — Identity Resolution
         merkury_person_id:   "MRK-4821-A3F9",
         client_brand_id:     "ANF-CRM-00291847",
-        confidence_score:    2,
+        confidence_score:    1,
         match_type:          "deterministic",
         id_source:           "crm_match",
+        authenticated:       "true",
+        session_state:       "signed_in",
         // Group 2 — Demographics
         age_range:           "25-34",
         gender:              "F",
@@ -1733,8 +1883,8 @@ var MERKURY_PAYLOADS = {
         // Group 1 — Identity Resolution
         merkury_person_id:   "MRK-7133-C6D2",
         client_brand_id:     "ANF-CRM-00509312",
-        confidence_score:    5,
-        match_type:          "probabilistic",
+        confidence_score:    2,
+        match_type:          "deterministic",
         id_source:           "pixel",
         // Group 2 — Demographics
         age_range:           "28-37",
@@ -1764,8 +1914,8 @@ var MERKURY_PAYLOADS = {
         // Group 1 — Identity Resolution
         merkury_person_id:   "MRK-9902-B1E7",
         client_brand_id:     "ANF-CRM-NEW",
-        confidence_score:    3,
-        match_type:          "deterministic",
+        confidence_score:    5,
+        match_type:          "probabilistic",
         id_source:           "email_hash",
         // Group 2 — Demographics
         age_range:           "30-39",
@@ -1904,7 +2054,7 @@ var PERSONAS = [
     title: 'Gold Member · Women\'s Dresses',
     avatar: '👗',
     avatarBg: '#2e1e10',
-    tags: [{ l: 'Deterministic · Score 2', c: 'match' }, { l: 'Gold Member', c: 'role' }]
+    tags: [{ l: 'Score 1 · Deterministic', c: 'match' }, { l: 'Authenticated', c: 'role' }]
   },
   {
     key: 'jake',
@@ -1912,7 +2062,7 @@ var PERSONAS = [
     title: 'Lapsed Buyer · Men\'s Denim',
     avatar: '👖',
     avatarBg: '#0e1e2e',
-    tags: [{ l: 'Probabilistic · Score 5', c: 'industry' }, { l: 'Lapsed 91 Days', c: 'role' }]
+    tags: [{ l: 'Score 2 · Deterministic', c: 'match' }, { l: 'Lapsed 91 Days', c: 'role' }]
   },
   {
     key: 'priya',
@@ -1920,7 +2070,7 @@ var PERSONAS = [
     title: 'First Visit · Email Hash Match',
     avatar: '✨',
     avatarBg: '#1e102e',
-    tags: [{ l: 'Deterministic · Score 3', c: 'match' }, { l: 'New Visitor', c: 'role' }]
+    tags: [{ l: 'Score 5 · Probabilistic', c: 'industry' }, { l: 'Prospect', c: 'role' }]
   }
 ];
 
@@ -2069,6 +2219,14 @@ function merkuryResolve(personaKey) {
 
     document.dispatchEvent(new CustomEvent('merkury:resolved', { detail: resolved }));
 
+    // Render identity panel
+    renderIdentityPanel(personaKey, latency);
+
+    // Maya has item in bag
+    cartHasItem = (personaKey === 'maya');
+    var badge = document.getElementById('cart-badge');
+    if (badge) badge.style.display = cartHasItem ? 'flex' : 'none';
+
   }, latency);
 }
 
@@ -2155,18 +2313,18 @@ function updatePersonaBanners(persona) {
   var mPill = document.getElementById('mens-banner-pill');
 
   if (persona.key === 'maya') {
-    if (wText) wText.innerHTML = '<strong>Maya</strong> — Gold Member · Showing curated dresses &amp; sets for you';
-    if (wPill) wPill.textContent = 'Score 2 · Deterministic';
+    if (wText) wText.innerHTML = '<strong>Maya</strong> — Gold Member · Authenticated · Curated dresses &amp; sets for you';
+    if (wPill) wPill.textContent = 'Score 1 · Deterministic';
   } else if (persona.key === 'jake') {
     if (mText) mText.innerHTML = '<strong>Jake</strong> — Lapsed buyer · Denim &amp; new arrivals surfaced for re-engagement';
-    if (mPill) mPill.textContent = 'Score 5 · Probabilistic';
+    if (mPill) mPill.textContent = 'Score 2 · Deterministic';
     if (wText) wText.innerHTML = 'Browsing Women\'s — Identity resolved in background';
-    if (wPill) wPill.textContent = 'Score 5 · Probabilistic';
+    if (wPill) wPill.textContent = 'Score 2 · Deterministic';
   } else if (persona.key === 'priya') {
-    if (wText) wText.innerHTML = '<strong>Priya</strong> — First visit · Matched via email hash from paid campaign';
-    if (wPill) wPill.textContent = 'Score 3 · Deterministic';
-    if (mText) mText.innerHTML = 'Identity resolved — first-time visitor';
-    if (mPill) mPill.textContent = 'Score 3 · Deterministic';
+    if (wText) wText.innerHTML = '<strong>Priya</strong> — Prospect · Matched via email hash from paid campaign';
+    if (wPill) wPill.textContent = 'Score 5 · Probabilistic';
+    if (mText) mText.innerHTML = 'Prospect — probabilistic identity resolved';
+    if (mPill) mPill.textContent = 'Score 5 · Probabilistic';
   }
 }
 
@@ -2294,6 +2452,217 @@ document.addEventListener('click', function(e) {
     return false;
   }
 }, true);
+
+// ─── IDENTITY PANEL ──────────────────────────────────────────────────────────
+function openIdentityPanel() {
+  document.getElementById('identity-panel').classList.add('open');
+  document.getElementById('identity-tab').classList.remove('visible');
+}
+function closeIdentityPanel() {
+  document.getElementById('identity-panel').classList.remove('open');
+  // Show tab again only if there's a match
+  if (activePersonaKey !== 'default') {
+    document.getElementById('identity-tab').classList.add('visible');
+  }
+}
+
+function renderIdentityPanel(personaKey, latencyMs) {
+  var panel = document.getElementById('idp-body');
+  var timeEl = document.getElementById('idp-resolve-ms');
+  var tab = document.getElementById('identity-tab');
+
+  if (personaKey === 'default') {
+    panel.innerHTML = '<div class="idp-no-match">Anonymous visitor — no match</div>';
+    if (timeEl) timeEl.textContent = 'Resolved in —';
+    document.getElementById('identity-panel').classList.remove('open');
+    tab.classList.remove('visible');
+    return;
+  }
+
+  var d = MERKURY_PAYLOADS[personaKey].d.data;
+  var isMaya = personaKey === 'maya';
+  var authBadge = isMaya ? '<div class="idp-auth-badge">✓ Authenticated · myAbercrombie Gold</div>' : '';
+
+  var scoreClass = d.confidence_score <= 3 ? 'hi' : 'warn';
+
+  panel.innerHTML = authBadge +
+    '<div class="idp-group">' +
+      '<div class="idp-group-label">Identity Resolution</div>' +
+      row('merkury_person_id', "'" + d.merkury_person_id + "'") +
+      row('client_brand_id', "'" + d.client_brand_id + "'") +
+      row('confidence_score', d.confidence_score, scoreClass) +
+      row('match_type', "'" + d.match_type + "'", scoreClass) +
+      row('id_source', "'" + d.id_source + "'") +
+      (isMaya ? row('authenticated', "'true'", 'hi') + row('session_state', "'signed_in'", 'hi') : '') +
+    '</div>' +
+    '<div class="idp-group">' +
+      '<div class="idp-group-label">Demographics</div>' +
+      row('age_range', "'" + d.age_range + "'") +
+      row('gender', "'" + d.gender + "'") +
+      row('hh_income_range', "'" + d.hh_income_range + "'") +
+      row('life_stage', "'" + d.life_stage + "'") +
+    '</div>' +
+    '<div class="idp-group">' +
+      '<div class="idp-group-label">Behavioral / Purchase Signals</div>' +
+      row('purchase_propensity', "'" + d.purchase_propensity + "'", d.purchase_propensity === 'high' ? 'hi' : '') +
+      row('category_affinity', "'" + d.category_affinity + "'") +
+      row('loyalty_tier', "'" + d.loyalty_tier + "'", d.loyalty_tier !== 'none' ? 'hi' : '') +
+      row('days_since_purchase', d.days_since_last_purchase, d.days_since_last_purchase > 60 ? 'warn' : '') +
+      row('avg_order_value', "'" + d.avg_order_value + "'") +
+    '</div>' +
+    '<div class="idp-group">' +
+      '<div class="idp-group-label">Channel & Engagement</div>' +
+      row('email_reachable', "'" + d.email_reachable + "'", d.email_reachable === 'true' ? 'hi' : '') +
+      row('preferred_channel', "'" + d.preferred_channel + "'") +
+      row('in_store_shopper', "'" + d.in_store_shopper + "'") +
+      row('app_installed', "'" + d.app_installed + "'") +
+    '</div>';
+
+  if (timeEl) timeEl.textContent = 'Resolved in ' + latencyMs + 'ms';
+
+  // Auto-open panel and show tab
+  document.getElementById('identity-panel').classList.add('open');
+  tab.classList.remove('visible');
+
+  // After 4s close panel and show tab instead
+  setTimeout(function() {
+    document.getElementById('identity-panel').classList.remove('open');
+    if (activePersonaKey !== 'default') tab.classList.add('visible');
+  }, 4000);
+}
+
+function row(key, val, cls) {
+  return '<div class="idp-row">' +
+    '<span class="idp-key">' + key + '</span>' +
+    '<span class="idp-sep"> : </span>' +
+    '<span class="idp-val ' + (cls || '') + '">' + val + '</span>' +
+    '</div>';
+}
+
+// ─── CART DRAWER ─────────────────────────────────────────────────────────────
+var cartHasItem = false;
+
+function openCart() {
+  document.getElementById('cart-drawer').classList.add('open');
+  document.getElementById('drawer-overlay').classList.add('open');
+  renderCart();
+}
+function closeCart() {
+  document.getElementById('cart-drawer').classList.remove('open');
+  document.getElementById('drawer-overlay').classList.remove('open');
+}
+
+function renderCart() {
+  var body = document.getElementById('cart-body');
+  var footer = document.getElementById('cart-footer');
+  var title = document.getElementById('cart-title');
+  var badge = document.getElementById('cart-badge');
+
+  if (!cartHasItem) {
+    title.textContent = 'Shopping Bag';
+    badge.style.display = 'none';
+    body.innerHTML =
+      '<div class="cart-loyalty-nudge">' +
+        '<div class="cln-logo">myAbercrombie</div>' +
+        '<p>Earn up to 750 points with your next order. <strong>Join now to get $10 off $50 instantly.</strong></p>' +
+        '<div class="cart-loyalty-btns">' +
+          '<button class="btn-csignin" onclick="closeCart();openContactModal()">Sign In</button>' +
+          '<button class="btn-cjoin" onclick="closeCart();openContactModal()">Join</button>' +
+        '</div>' +
+      '</div>' +
+      '<div class="cart-empty">' +
+        '<div class="cart-empty-icon">🛍️</div>' +
+        '<h4>Your bag is empty</h4>' +
+        '<p>Add something you love to get started.</p>' +
+        '<button class="btn-dark" onclick="closeCart();showPage(\'womens\')" style="padding:12px 28px;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border:none;background:#1a1a1a;color:#fff;">SHOP WOMEN\'S</button>' +
+      '</div>';
+    footer.innerHTML = '';
+    return;
+  }
+
+  // Maya has item in bag
+  var item = { name: 'Scoopneck Flowy Mini Dress', sku: "Women's: 666011507", size: 'S, Rose Blush', price: '$110', img: 'https://img.abercrombie.com/is/image/anf/KIC_111-6319-00053-404_model1?policy=product-medium' };
+  title.textContent = 'Shopping Bag (1 item)';
+  badge.style.display = 'flex';
+
+  body.innerHTML =
+    '<div class="cart-shipping-bar">' +
+      '<p>Just <span>$24.00 away</span> from Free Shipping</p>' +
+      '<div class="cart-progress"><div class="cart-progress-fill" style="width:75%"></div></div>' +
+    '</div>' +
+    '<div class="cart-item">' +
+      '<div class="cart-item-photo"><img src="' + item.img + '" alt="' + item.name + '"></div>' +
+      '<div>' +
+        '<div class="cart-item-name">' + item.name + '</div>' +
+        '<div class="cart-item-meta">' + item.sku + '<br>' + item.size + '</div>' +
+        '<div class="cart-item-price">' + item.price + '</div>' +
+        '<div class="cart-item-social">⚡ 48 People Just Purchased</div>' +
+      '</div>' +
+    '</div>';
+
+  footer.innerHTML =
+    '<div class="cart-summary-row"><span>Items (1)</span><span>$110.00</span></div>' +
+    '<div class="cart-summary-row"><span>Member Discount (20%)</span><span style="color:#2d5a27">-$22.00</span></div>' +
+    '<div class="cart-summary-row total"><span>Subtotal</span><span>$88.00</span></div>' +
+    '<button class="btn-green" style="margin-top:14px;" onclick="return false;">CHECKOUT</button>' +
+    '<p style="font-family:var(--sans);font-size:10px;color:var(--text3);text-align:center;margin-top:10px;">or express checkout with PayPal</p>';
+}
+
+// ─── FAVORITES DRAWER ────────────────────────────────────────────────────────
+function openFavorites() {
+  document.getElementById('favorites-drawer').classList.add('open');
+  document.getElementById('drawer-overlay').classList.add('open');
+  renderFavorites();
+}
+function closeFavorites() {
+  document.getElementById('favorites-drawer').classList.remove('open');
+  document.getElementById('drawer-overlay').classList.remove('open');
+}
+
+function renderFavorites() {
+  var body = document.getElementById('favorites-body');
+  var persona = activePersonaKey;
+
+  if (persona === 'default') {
+    body.innerHTML =
+      '<div class="favorites-empty">' +
+        '<div class="favorites-empty-heart">♡</div>' +
+        '<h4>It doesn\'t look like you have any items in your list.</h4>' +
+        '<p>Save your favorites to come back to them anytime.</p>' +
+        '<div class="favorites-signin"><a onclick="closeFavorites();openContactModal()">Sign in</a> to keep your items for up to 60 days.</div>' +
+      '</div>';
+    return;
+  }
+
+  var recoItems = [
+    { name: 'Boho Maxi Skirt', price: '$95', img: 'https://img.abercrombie.com/is/image/anf/KIC_111-6321-00231-404_model1?policy=product-medium' },
+    { name: 'Button-Through Lace-Trim Tank', price: '$75', img: 'https://img.abercrombie.com/is/image/anf/KIC_111-6320-00353-404_model1?policy=product-medium' },
+    { name: 'A&F Emerson Puff Sleeve Midi Dress', price: '$120', img: 'https://img.abercrombie.com/is/image/anf/KIC_159-7129-00377-226_model1?policy=product-medium' },
+    { name: 'Mid Rise A-Line Short', price: '$65', img: 'https://img.abercrombie.com/is/image/anf/KIC_140-6043-00463-256_model1?policy=product-medium' }
+  ];
+
+  var recoHTML = recoItems.map(function(r) {
+    return '<div class="fav-card">' +
+      '<div class="fav-photo"><img src="' + r.img + '" alt="' + r.name + '"></div>' +
+      '<div class="fav-name">' + r.name + '</div>' +
+      '<div class="fav-price">' + r.price + '</div>' +
+      '</div>';
+  }).join('');
+
+  body.innerHTML =
+    '<div class="favorites-empty" style="padding:24px 0 16px;">' +
+      '<div class="favorites-empty-heart">♡</div>' +
+      '<h4>Your list is empty</h4>' +
+      '<p>Tap the heart on any item to save it here.</p>' +
+    '</div>' +
+    '<div class="fav-reco-title">Pieces We Think You\'ll Also Like</div>' +
+    '<div class="favorites-grid">' + recoHTML + '</div>';
+}
+
+function closeAllDrawers() {
+  closeCart();
+  closeFavorites();
+}
 
 // ─── INIT ────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function() {
