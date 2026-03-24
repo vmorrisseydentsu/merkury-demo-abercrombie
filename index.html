@@ -1093,37 +1093,6 @@ body { font-family: var(--sans); color: var(--text); background: var(--white); o
 .modal-success h3 { font-family: var(--serif); font-size: 24px; margin-bottom: 8px; }
 .modal-success p { font-family: var(--sans); font-size: 13px; color: var(--text3); }
 
-/* ─── PAGE INDICATOR ─── */
-.page-indicator {
-  position: fixed;
-  bottom: 24px;
-  left: 24px;
-  z-index: 9998;
-  display: flex;
-  gap: 6px;
-  align-items: center;
-  background: rgba(15,25,35,0.85);
-  padding: 8px 14px;
-  border-radius: 4px;
-}
-.pi-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.25);
-  cursor: pointer;
-  transition: background 0.2s, width 0.2s;
-}
-.pi-dot.active { background: #fff; width: 18px; border-radius: 3px; }
-.pi-label {
-  font-family: var(--sans);
-  font-size: 10px;
-  color: rgba(255,255,255,0.5);
-  margin-left: 4px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
 /* ─── IDENTITY BUMP-OUT PANEL ─── */
 #identity-panel {
   position: fixed;
@@ -1131,13 +1100,16 @@ body { font-family: var(--sans); color: var(--text); background: var(--white); o
   left: 0;
   transform: translateY(-50%) translateX(-100%);
   z-index: 9990;
-  width: 280px;
+  width: 285px;
   background: #0a1520;
   border-radius: 0 8px 8px 0;
   box-shadow: 4px 0 32px rgba(0,0,0,0.4);
   font-family: 'Courier New', Courier, monospace;
-  transition: transform 0.35s cubic-bezier(0.34,1.1,0.64,1);
+  transition: transform 0.4s cubic-bezier(0.34,1.1,0.64,1);
   overflow: hidden;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
 }
 #identity-panel.open { transform: translateY(-50%) translateX(0); }
 .idp-header {
@@ -1796,15 +1768,6 @@ body { font-family: var(--sans); color: var(--text); background: var(--white); o
   <div class="drawer-body" id="favorites-body"></div>
 </div>
 
-<!-- PAGE INDICATOR -->
-<div class="page-indicator">
-  <div class="pi-dot active" id="pi-0" onclick="showPage('home')"></div>
-  <div class="pi-dot" id="pi-1" onclick="showPage('womens')"></div>
-  <div class="pi-dot" id="pi-2" onclick="showPage('mens')"></div>
-  <div class="pi-dot" id="pi-3" onclick="showPage('contact')"></div>
-  <span class="pi-label" id="pi-label">Home</span>
-</div>
-
 <!-- PERSONA SWITCHER -->
 <div id="persona-switcher">
   <div id="ps-toggle" onclick="toggleSwitcher()">
@@ -2077,6 +2040,7 @@ var PERSONAS = [
 // ─── STATE ───────────────────────────────────────────────────────────────────
 var activePersonaKey = 'default';
 var currentPage = 'home';
+var cartHasItem = false;
 
 // ─── PRODUCT DATA ────────────────────────────────────────────────────────────
 var WOMENS_PRODUCTS_DEFAULT = [
@@ -2139,7 +2103,7 @@ function merkuryResolve(personaKey) {
   personaKey = personaKey || 'default';
   window._merkuryPersona = personaKey;
 
-  var latency = 280 + Math.floor(Math.random() * 180);
+  var latency = 80 + Math.floor(Math.random() * 110);
   var now = Date.now();
 
   setTimeout(function() {
@@ -2364,31 +2328,18 @@ function applyPersona(key) {
 }
 
 // ─── SPA ROUTER ──────────────────────────────────────────────────────────────
-var pageLabels = { home: 'Home', womens: "Women's", mens: "Men's", contact: 'Contact' };
-var pageOrder  = ['home', 'womens', 'mens', 'contact'];
-
 function showPage(n) {
   document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
   var p = document.getElementById('page-' + n);
   if (p) p.classList.add('active');
   window.scrollTo({ top: 0, behavior: 'instant' });
   currentPage = n;
-  updatePageIndicator();
   if (activePersonaKey !== 'default') {
     setTimeout(function() { applyPersona(activePersonaKey); }, 60);
   }
   window._svq = window._svq || [];
   window._svq.push(['_trackPageView']);
   setTimeout(function() { merkuryResolve(window._merkuryPersona || 'default'); }, 90);
-}
-
-function updatePageIndicator() {
-  pageOrder.forEach(function(name, i) {
-    var dot = document.getElementById('pi-' + i);
-    if (dot) dot.classList.toggle('active', name === currentPage);
-  });
-  var label = document.getElementById('pi-label');
-  if (label) label.textContent = pageLabels[currentPage] || currentPage;
 }
 
 // ─── PERSONA SWITCHER UI ─────────────────────────────────────────────────────
@@ -2456,33 +2407,30 @@ document.addEventListener('click', function(e) {
 // ─── IDENTITY PANEL ──────────────────────────────────────────────────────────
 function openIdentityPanel() {
   document.getElementById('identity-panel').classList.add('open');
-  document.getElementById('identity-tab').classList.remove('visible');
 }
 function closeIdentityPanel() {
   document.getElementById('identity-panel').classList.remove('open');
-  // Show tab again only if there's a match
-  if (activePersonaKey !== 'default') {
-    document.getElementById('identity-tab').classList.add('visible');
-  }
 }
 
 function renderIdentityPanel(personaKey, latencyMs) {
   var panel = document.getElementById('idp-body');
   var timeEl = document.getElementById('idp-resolve-ms');
+  var panelEl = document.getElementById('identity-panel');
   var tab = document.getElementById('identity-tab');
+
+  // Always show the tab
+  tab.classList.add('visible');
 
   if (personaKey === 'default') {
     panel.innerHTML = '<div class="idp-no-match">Anonymous visitor — no match</div>';
     if (timeEl) timeEl.textContent = 'Resolved in —';
-    document.getElementById('identity-panel').classList.remove('open');
-    tab.classList.remove('visible');
+    panelEl.classList.remove('open');
     return;
   }
 
   var d = MERKURY_PAYLOADS[personaKey].d.data;
   var isMaya = personaKey === 'maya';
   var authBadge = isMaya ? '<div class="idp-auth-badge">✓ Authenticated · myAbercrombie Gold</div>' : '';
-
   var scoreClass = d.confidence_score <= 3 ? 'hi' : 'warn';
 
   panel.innerHTML = authBadge +
@@ -2520,15 +2468,8 @@ function renderIdentityPanel(personaKey, latencyMs) {
 
   if (timeEl) timeEl.textContent = 'Resolved in ' + latencyMs + 'ms';
 
-  // Auto-open panel and show tab
-  document.getElementById('identity-panel').classList.add('open');
-  tab.classList.remove('visible');
-
-  // After 4s close panel and show tab instead
-  setTimeout(function() {
-    document.getElementById('identity-panel').classList.remove('open');
-    if (activePersonaKey !== 'default') tab.classList.add('visible');
-  }, 4000);
+  // Open the panel
+  panelEl.classList.add('open');
 }
 
 function row(key, val, cls) {
@@ -2540,8 +2481,6 @@ function row(key, val, cls) {
 }
 
 // ─── CART DRAWER ─────────────────────────────────────────────────────────────
-var cartHasItem = false;
-
 function openCart() {
   document.getElementById('cart-drawer').classList.add('open');
   document.getElementById('drawer-overlay').classList.add('open');
@@ -2669,7 +2608,7 @@ document.addEventListener('DOMContentLoaded', function() {
   buildPersonaList();
   renderProducts('womens-product-grid', WOMENS_PRODUCTS_DEFAULT);
   renderProducts('mens-product-grid', MENS_PRODUCTS_DEFAULT);
-  updatePageIndicator();
+  document.getElementById('identity-tab').classList.add('visible');
   setTimeout(function() { merkuryResolve('default'); }, 120);
 });
 </script>
