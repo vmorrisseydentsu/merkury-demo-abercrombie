@@ -562,7 +562,7 @@ button{font-family:var(--ss);cursor:pointer;border:0;background:none;}
 <!-- ══ DISPLAY AD MODAL (Priya) ══════════════════════════════════════ -->
 <div id="dsp-ovl" onclick="if(event.target===this)closeDsp()">
   <div class="dsp-wrap">
-    <div class="dsp-photo" style="background:url('https://img.abercrombie.com/is/image/anf/KIC_159-7033-00435-234_model1?policy=product-medium') center top/cover no-repeat;">
+    <div class="dsp-photo" style="background:url('https://img.abercrombie.com/is/image/anf/KIC_159-7033-00435-234_model1?policy=product-extra-large') center top/cover no-repeat;">
       <div class="dsp-ovlg"></div>
       <button class="dsp-x" onclick="closeDsp()">&#215;</button>
       <div class="dsp-txtbox"><div class="dsp-ey">New Visitor — Women's Apparel</div><div class="dsp-h2">Discover<br>Effortless Classics.</div></div>
@@ -698,7 +698,7 @@ button{font-family:var(--ss);cursor:pointer;border:0;background:none;}
     <div class="hovl"></div>
     <div class="hcontent"><div class="w">
       <div id="hhero-txt">
-        <div class="heyebrow" id="hhero-ey"></div>
+        <div class="heyebrow" id="hhero-ey"><span style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:4px 10px;border-radius:2px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6)">&#9675; Anonymous Visitor &mdash; No Identity Resolved</span></div>
         <h1 class="hh1" id="hhero-h1">Hotel<br>Abercrombie</h1>
         <p class="hsub" id="hhero-sub">New sun-ready looks are made to getaway.</p>
         <div class="hctas">
@@ -822,24 +822,24 @@ document.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)
 var PAYLOADS = {
   default:{ d:{ data:{}, response:'no_match', version:'1.0.0' } },
   maya:{ d:{ response:'match', version:'1.0.0', data:{
-    merkury_person_id:'MRK-4821-A3F9', client_brand_id:'ANF-CRM-00291847',
-    confidence_score:1, match_type:'deterministic', id_source:'crm_match', authenticated:'true', session_state:'signed_in',
+    dentsu_id:'4821A3F9C2E100D8', crm_id:'00291847',
+    confidence_score:1, match_type:'deterministic', authenticated:'true', session_state:'signed_in',
     age_range:'age_band_3', gender:'gender_F', hh_income_range:'hhi_band_6', life_stage:'young_adult',
     purchase_propensity:'high', category_affinity:'womens_dresses', loyalty_tier:'myAbercrombie_gold',
     days_since_last_purchase:14, avg_order_value:'$112',
     email_reachable:'true', preferred_channel:'email', in_store_shopper:'true', app_installed:'true'
   }}},
   jake:{ d:{ response:'match', version:'1.0.0', data:{
-    merkury_person_id:'MRK-7133-C6D2', client_brand_id:'ANF-CRM-00509312',
-    confidence_score:2, match_type:'deterministic', id_source:'pixel',
+    dentsu_id:'7133C6D2A8F200E1', crm_id:'00509312',
+    confidence_score:2, match_type:'deterministic',
     age_range:'age_band_4', gender:'gender_M', hh_income_range:'hhi_band_5', life_stage:'young_adult',
     purchase_propensity:'medium', category_affinity:'mens_denim', loyalty_tier:'myAbercrombie_silver',
     days_since_last_purchase:91, avg_order_value:'$78',
     email_reachable:'true', preferred_channel:'sms', in_store_shopper:'false', app_installed:'false'
   }}},
   priya:{ d:{ response:'match', version:'1.0.0', data:{
-    merkury_person_id:'MRK-9902-B1E7', client_brand_id:'ANF-CRM-NEW',
-    confidence_score:5, match_type:'probabilistic', id_source:'email_hash',
+    dentsu_id:'9902B1E7D3F400C5', crm_id:null,
+    confidence_score:5, match_type:'probabilistic',
     age_range:'age_band_3', gender:'gender_F', hh_income_range:'hhi_band_7', life_stage:'young_adult',
     purchase_propensity:'high', category_affinity:'womens_tops', loyalty_tier:'none',
     days_since_last_purchase:999, avg_order_value:'$0',
@@ -849,8 +849,8 @@ var PAYLOADS = {
 
 // ── HERO VARIANTS ──────────────────────────────────────────────────
 var HV = {
-  default:{ home:{ey:'',h1:'Hotel<br>Abercrombie',sub:'New sun-ready looks are made to getaway.',c1:"SHOP WOMEN'S",c2:"SHOP MEN'S"}, w:{h1:"Women's",sub:'New arrivals · Spring Preview · Effortless Classics'}, m:{h1:"Men's",sub:'New arrivals · Spring Preview · Bestsellers'} },
-  maya:{ home:{ey:'Welcome back, myAbercrombie Gold Member',h1:'Your Spring<br>Picks Are Here',sub:'New dresses and matching sets — plus your exclusive 20% member discount.',c1:'SHOP MY PICKS',c2:'VIEW MEMBER DEALS',bg:'https://img.abercrombie.com/is/image/anf/KIC_159-7046-00030-416_model1?policy=product-medium'}, w:{h1:"Women's New Dresses & Sets",sub:"Curated based on your purchase history — new dresses and sets you'll love."}, m:{h1:"Men's New Arrivals",sub:''} },
+  default:{ home:{ey:'',h1:'New Arrivals<br>for Everyone',sub:'Discover the latest styles for women and men. Free shipping on orders over $99.',c1:"SHOP WOMEN'S",c2:"SHOP MEN'S"}, w:{h1:"Women's",sub:'Shop the latest arrivals in tops, dresses, denim and more.'}, m:{h1:"Men's",sub:'Shop the latest arrivals in shirts, jeans, shorts and more.'} },
+  maya:{ home:{ey:'Welcome back, myAbercrombie Gold Member',h1:'Your Spring<br>Picks Are Here',sub:'New dresses and matching sets — plus your exclusive 20% member discount.',c1:'SHOP MY PICKS',c2:'VIEW MEMBER DEALS',bg:'https://img.abercrombie.com/is/image/anf/KIC_159-6890-00386-100_life1?policy=product-extra-large'}, w:{h1:"Women's New Dresses & Sets",sub:"Curated based on your purchase history — new dresses and sets you'll love."}, m:{h1:"Men's New Arrivals",sub:''} },
   jake:{ home:{ey:"We've Missed You — Back for More?",h1:'New Denim<br>Just Dropped',sub:"You haven't shopped in a while. Fresh denim and new fits are waiting.",c1:'SHOP NEW DENIM',c2:"SEE MEN'S",bg:'https://img.abercrombie.com/is/image/anf/KIC_131-5149-00372-280_life2?policy=product-extra-large'}, w:{h1:"Women's New Arrivals",sub:''}, m:{h1:"Men's Denim &<br>New Arrivals",sub:"New denim fits and spring essentials picked for you. Welcome back, Jake."} },
   priya:{ home:{ey:"Hello — We're Glad You Found Us",h1:'Discover<br>A&amp;F',sub:"Effortless classics, quality you can feel. Free shipping on your first order over $99.",c1:"SHOP WOMEN'S",c2:'JOIN myAbercrombie',bg:'https://img.abercrombie.com/is/image/anf/ANF-2026-FebWk1-D-HP-SpringPreview-Part2-Dual-1.jpg'}, w:{h1:"Women's Bestsellers",sub:"Our most-loved tops and dresses — a perfect place to start."}, m:{h1:"Men's New Arrivals",sub:''} }
 };
@@ -872,24 +872,24 @@ var PERSONAS = [
 
 // ── PRODUCT DATA ───────────────────────────────────────────────────
 var WD = [
-  {n:'Scoopneck Flowy Mini Dress',p:'$110',b:'BESTSELLER',sw:['#c4b8a0','#1a1a1a','#6b8fa0','#d4a8a8'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6319-00053-404_model1?policy=product-medium'},
-  {n:'Shrunken Crew Cardigan',p:'$85',b:'BESTSELLER',sw:['#8a5240','#e8dcc8','#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_143-6099-00140-226_life1?policy=product-medium'},
-  {n:'Button-Through Lace-Trim Tank',p:'$75',b:'BESTSELLER',sw:['#1a1a1a','#e8e0d4','#a8b8c8'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6320-00353-404_model1?policy=product-medium'},
-  {n:'Boho Maxi Skirt',p:'$95',b:'BESTSELLER',sw:['#d4c8b8','#1a1a1a','#c83030'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6321-00231-404_model1?policy=product-medium'},
-  {n:'Puff Sleeve Midi Dress',p:'$120',b:'NEW',sw:['#7a9090','#e8ddd4','#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_159-7129-00377-226_model1?policy=product-medium'},
-  {n:'Essential Tuckable Baby Tee',p:'$35',b:'BESTSELLER',sw:['#f0ece4','#1a1a1a','#d4a8a8'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6086-00317-202_model1?policy=product-medium'},
-  {n:'Wide Strap Underwire Bikini Top',p:'$55',b:'',sw:['#8090b0','#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_150-6054-00230-480_model1?policy=product-medium'},
-  {n:'Mid Rise A-Line Short',p:'$65',b:'BESTSELLER',sw:['#d4c8a0','#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_140-6043-00463-256_model1?policy=product-medium'}
+  {n:'Gauze Midi Wrap Dress',p:'$110',b:'BESTSELLER',sw:['#d4c8b0', '#1a1a1a', '#7a9090'],img:'https://img.abercrombie.com/is/image/anf/KIC_159-6890-00386-100_model1?policy=product-medium'},
+  {n:'Smocked Maxi Dress',p:'$99',b:'NEW',sw:['#c8a0b8', '#1a1a1a', '#e8ddd4'],img:'https://img.abercrombie.com/is/image/anf/KIC_159-7048-00943-810_model1?policy=product-medium'},
+  {n:'Linen-Blend Short Sleeve Top',p:'$55',b:'BESTSELLER',sw:['#d4c8a0', '#e8ddd4', '#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6245-00077-256_model1?policy=product-medium'},
+  {n:'Linen-Blend Mini Skirt',p:'$65',b:'BESTSELLER',sw:['#a8b8b0', '#e8e0d4', '#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6247-00078-256_model1?policy=product-medium'},
+  {n:'Ruched Bandeau Midi Dress',p:'$95',b:'NEW',sw:['#d4a8a0', '#1a1a1a', '#c8b898'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6219-00069-154_model1?policy=product-medium'},
+  {n:'Strappy Linen Maxi Dress',p:'$110',b:'BESTSELLER',sw:['#e8ddd4', '#1a1a1a', '#9098a0'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6198-00071-154_model1?policy=product-medium'},
+  {n:'High Cut One-Piece Swimsuit',p:'$79',b:'NEW',sw:['#6888b0', '#1a1a1a', '#c8a8b0'],img:'https://img.abercrombie.com/is/image/anf/KIC_150-6127-00764-506_model1?policy=product-medium'},
+  {n:'Ribbed Tank Midi Dress',p:'$85',b:'BESTSELLER',sw:['#c8c0b0', '#1a1a1a', '#8a7a6a'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6151-00203-200_model1?policy=product-medium'}
 ];
 var WD_MAYA = [
-  {n:'Scoopneck Flowy Mini Dress',p:'$110',b:'BESTSELLER',tag:'Picked For You',sw:['#c4b8a0','#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6319-00053-404_model1?policy=product-medium'},
-  {n:'Boho Maxi Skirt',p:'$95',b:'BESTSELLER',tag:'Picked For You',sw:['#d4c8b8','#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6321-00231-404_model1?policy=product-medium'},
-  {n:'Button-Through Lace-Trim Tank',p:'$75',b:'BESTSELLER',tag:'Trending Now',sw:['#1a1a1a','#e8e0d4'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6320-00353-404_model1?policy=product-medium'},
-  {n:'Puff Sleeve Midi Dress',p:'$120',b:'NEW',tag:'New for You',sw:['#7a9090','#e8ddd4'],img:'https://img.abercrombie.com/is/image/anf/KIC_159-7129-00377-226_model1?policy=product-medium'},
-  {n:'Shrunken Crew Cardigan',p:'$85',b:'BESTSELLER',sw:['#8a5240','#e8dcc8'],img:'https://img.abercrombie.com/is/image/anf/KIC_143-6099-00140-226_life1?policy=product-medium'},
-  {n:'Essential Tuckable Baby Tee',p:'$35',b:'BESTSELLER',sw:['#f0ece4','#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6086-00317-202_model1?policy=product-medium'},
-  {n:'Mid Rise A-Line Short',p:'$65',b:'BESTSELLER',sw:['#d4c8a0','#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_140-6043-00463-256_model1?policy=product-medium'},
-  {n:'Wide Strap Underwire Bikini Top',p:'$55',b:'',sw:['#8090b0','#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_150-6054-00230-480_model1?policy=product-medium'}
+  {n:'Gauze Midi Wrap Dress',p:'$110',b:'BESTSELLER',tag:'Picked For You',sw:['#d4c8b0', '#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_159-6890-00386-100_model1?policy=product-medium'},
+  {n:'Smocked Maxi Dress',p:'$99',b:'NEW',tag:'Picked For You',sw:['#c8a0b8', '#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_159-7048-00943-810_model1?policy=product-medium'},
+  {n:'Linen-Blend Short Sleeve Top',p:'$55',b:'BESTSELLER',tag:'Trending Now',sw:['#d4c8a0', '#e8ddd4'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6245-00077-256_model1?policy=product-medium'},
+  {n:'Linen-Blend Mini Skirt',p:'$65',b:'BESTSELLER',tag:'New for You',sw:['#a8b8b0', '#e8e0d4'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6247-00078-256_model1?policy=product-medium'},
+  {n:'Ruched Bandeau Midi Dress',p:'$95',b:'NEW',sw:['#d4a8a0', '#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6219-00069-154_model1?policy=product-medium'},
+  {n:'Strappy Linen Maxi Dress',p:'$110',b:'BESTSELLER',sw:['#e8ddd4', '#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6198-00071-154_model1?policy=product-medium'},
+  {n:'High Cut One-Piece Swimsuit',p:'$79',b:'NEW',sw:['#6888b0', '#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_150-6127-00764-506_model1?policy=product-medium'},
+  {n:'Ribbed Tank Midi Dress',p:'$85',b:'BESTSELLER',sw:['#c8c0b0', '#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6151-00203-200_model1?policy=product-medium'}
 ];
 var WD_PRIYA = WD.map(function(p,i){return Object.assign({},p,{tag:i<4?['Customer Favorite','Best Seller','Best Seller','Best Seller'][i]:''});});
 var MD = [
@@ -960,7 +960,20 @@ function swapHome(v){
   var t=document.getElementById('hhero-txt'); if(!t) return;
   t.style.opacity='0';
   setTimeout(function(){
-    var ey=document.getElementById('hhero-ey'); if(ey) ey.textContent=v.ey||'';
+    var ey=document.getElementById('hhero-ey');
+    if(ey){
+      if(v.ey){
+        ey.innerHTML=v.ey;
+        ey.style.color='rgba(255,255,255,.85)';
+        ey.style.background='transparent';
+        ey.style.padding='0';
+        ey.style.borderRadius='0';
+        ey.style.display='block';
+      } else {
+        ey.innerHTML='<span style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:4px 10px;border-radius:2px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6)">&#9675; Anonymous Visitor &mdash; No Identity Resolved</span>';
+        ey.style.display='block';
+      }
+    }
     var h1=document.getElementById('hhero-h1'); if(h1) h1.innerHTML=v.h1;
     var sub=document.getElementById('hhero-sub'); if(sub) sub.textContent=v.sub;
     var c1=document.getElementById('hhero-c1'); if(c1) c1.textContent=v.c1;
@@ -1015,7 +1028,7 @@ function applyPersona(key, silent){
   if(key==='maya'){if(lh)lh.textContent='Welcome back, Maya';if(lp)lp.innerHTML='Your myAbercrombie member perks are active. You earn 10 pts per $1 — your next $10 reward is on its way.';if(lc)lc.textContent='VIEW MY ACCOUNT';}
   else if(key==='jake'){if(lh)lh.textContent="Jake — we've missed you";if(lp)lp.innerHTML='Your Silver membership is still active. Use BACK20 for 20% off.';if(lc)lc.textContent='CLAIM 20% OFF';}
   else if(key==='priya'){if(lh)lh.textContent='New to A&F?';if(lp)lp.innerHTML='Join myAbercrombie free — 10% off your first order.';if(lc)lc.textContent='JOIN FREE';}
-  else{if(lh)lh.textContent='myAbercrombie';if(lp)lp.innerHTML='Become a member for exclusive rewards &amp; stress-free shopping.';if(lc)lc.textContent='JOIN OR SIGN IN';}
+  else{if(lh)lh.textContent='myAbercrombie';if(lp)lp.innerHTML='Join free and start earning 10 pts for every $1 you spend. Redeem for $10 rewards, access exclusives, and more.';if(lc)lc.textContent='JOIN OR SIGN IN';}
   // Switcher UI
   var p=PERSONAS.find(function(x){return x.key===key;})||PERSONAS[0];
   document.getElementById('ps-tog-name').textContent=p.name;
@@ -1047,10 +1060,12 @@ function renderIdp(key,lat){
   var sc=d.confidence_score<=2?'hi':'warn', auth=d.authenticated==='true';
   var h='';
   if(auth) h+='<div style="display:inline-flex;align-items:center;gap:5px;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25);border-radius:3px;padding:3px 8px;margin-bottom:10px;font-family:var(--ss);font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#4ade80">&#10003; Authenticated &middot; myAbercrombie Gold</div>';
-  h+='<div class="idp-grp"><div class="idp-gl">Identity Resolution</div>'+rs('merkury_person_id',d.merkury_person_id)+rs('client_brand_id',d.client_brand_id)+rn('confidence_score',d.confidence_score,sc)+rs('match_type',d.match_type,sc)+rs('id_source',d.id_source)+(auth?rs('session_state','signed_in','hi'):'')+'</div>';
+  var crmVal = d.crm_id ? d.crm_id : 'null — no CRM record';
+  var crmCls = d.crm_id ? '' : 'warn';
+  h+='<div class="idp-grp"><div class="idp-gl">Identity Resolution</div>'+rs('dentsu_id',d.dentsu_id,'hi')+rs('crm_id',crmVal,crmCls)+rn('confidence_score',d.confidence_score,sc)+rs('match_type',d.match_type,sc)+(auth?rs('session_state','signed_in','hi'):'')+'</div>';
   h+='<div class="idp-grp"><div class="idp-gl">Demographics</div>'+rs('age_range',d.age_range)+rs('gender',d.gender)+rs('hh_income_range',d.hh_income_range)+rs('life_stage',d.life_stage)+'</div>';
   h+='<div class="idp-grp"><div class="idp-gl">Behavioral / Purchase Signals</div>'+rs('purchase_propensity',d.purchase_propensity,d.purchase_propensity==='high'?'hi':'')+rs('category_affinity',d.category_affinity)+rs('loyalty_tier',d.loyalty_tier,d.loyalty_tier!=='none'?'hi':'')+rn('days_since_last_purchase',d.days_since_last_purchase,d.days_since_last_purchase>60?'warn':'')+rs('avg_order_value',d.avg_order_value)+'</div>';
-  h+='<div class="idp-grp"><div class="idp-gl">Channel &amp; Engagement</div>'+rs('email_reachable',d.email_reachable,d.email_reachable==='true'?'hi':'')+rs('preferred_channel',d.preferred_channel)+rs('in_store_shopper',d.in_store_shopper)+rs('app_installed',d.app_installed)+'</div>';
+
   if(body) body.innerHTML=h;
   if(ms) ms.textContent='Resolved in '+lat+'ms';
 }
@@ -1161,7 +1176,7 @@ var TLM_CONFIG = {
     audName: 'Abandoned Cart — myAbercrombie Members',
     audSize: '14,203 profiles matched · Last synced 4 min ago',
     attrs: [
-      {k:'merkury_person_id',  v:'MRK-4821-A3F9',        cls:'hi'},
+      {k:'dentsu_id',          v:'4821A3F9C2E100D8',     cls:'hi'},
       {k:'confidence_score',   v:'1 (deterministic)',     cls:'hi'},
       {k:'loyalty_tier',       v:'myAbercrombie_gold',    cls:'hi'},
       {k:'purchase_propensity',v:'high',                  cls:'hi'},
@@ -1179,7 +1194,7 @@ var TLM_CONFIG = {
     audName: 'Lapsed Members — Men’s Affinity — SMS Eligible',
     audSize: '2,841 profiles matched · Last synced 11 min ago',
     attrs: [
-      {k:'merkury_person_id',    v:'MRK-7133-C6D2',      cls:'hi'},
+      {k:'dentsu_id',          v:'7133C6D2A8F200E1',     cls:'hi'},
       {k:'confidence_score',     v:'2 (deterministic)',   cls:'hi'},
       {k:'loyalty_tier',         v:'myAbercrombie_silver',cls:''},
       {k:'days_since_purchase',  v:'91',                  cls:'warn'},
@@ -1197,7 +1212,7 @@ var TLM_CONFIG = {
     audName: "Net-New Browsers — Women's High Intent — DSP",
     audSize: '38,410 profiles matched · Last synced 2 min ago',
     attrs: [
-      {k:'merkury_person_id',    v:'MRK-9902-B1E7',      cls:'hi'},
+      {k:'dentsu_id',          v:'9902B1E7D3F400C5',     cls:'hi'},
       {k:'confidence_score',     v:'5 (probabilistic)',   cls:'warn'},
       {k:'match_type',           v:'probabilistic',       cls:'warn'},
       {k:'hmid',                 v:'A3F9B2C10041D8',      cls:''},
