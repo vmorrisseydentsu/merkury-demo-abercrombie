@@ -408,6 +408,40 @@ button{font-family:var(--ss);cursor:pointer;border:0;background:none;}
 /* RESPONSIVE */
 @media(max-width:1024px){:root{--g:24px;}.hgrid,.pgrid{grid-template-columns:repeat(2,1fr);}.pband .w{grid-template-columns:1fr;gap:4px;}.footer-grid{grid-template-columns:1fr 1fr 1fr;}.ct-grid{grid-template-columns:1fr;}}
 @media(max-width:768px){.nlinks{display:none;}.pgrid,.hgrid{grid-template-columns:repeat(2,1fr);}.footer-grid{grid-template-columns:1fr 1fr;}#psw{bottom:16px;right:16px;}}
+
+/* ══ TEALIUM AUDIENCE CARD ════════════════════════════════════════ */
+#tlm-card-ovl{display:none;position:fixed;inset:0;z-index:9400;background:rgba(0,0,0,.6);backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:20px;}
+#tlm-card-ovl.on{display:flex;}
+.tlm-card{background:#fff;max-width:480px;width:100%;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.3);position:relative;}
+.tlm-topbar{background:#0d1a2e;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;}
+.tlm-topbar-left{display:flex;align-items:center;gap:10px;}
+.tlm-topbar-logo{font-size:13px;font-weight:700;color:#fff;letter-spacing:.04em;}
+.tlm-topbar-sub{font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.06em;text-transform:uppercase;}
+.tlm-x{background:none;border:none;font-size:20px;color:rgba(255,255,255,.5);cursor:pointer;line-height:1;}
+.tlm-x:hover{color:#fff;}
+.tlm-body{padding:20px 24px;}
+.tlm-section-label{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--tx3);margin-bottom:10px;}
+.tlm-audience-row{background:#f7f4f0;border-left:3px solid #0d1a2e;padding:12px 16px;margin-bottom:16px;}
+.tlm-audience-name{font-size:14px;font-weight:600;color:var(--tx);margin-bottom:3px;}
+.tlm-audience-size{font-size:11px;color:var(--tx3);}
+.tlm-attrs{margin-bottom:16px;}
+.tlm-attr-row{display:flex;gap:6px;align-items:flex-start;padding:6px 0;border-bottom:1px solid var(--lt);font-family:'Courier New',monospace;}
+.tlm-attr-row:last-child{border-bottom:none;}
+.tlm-attr-k{font-size:10px;color:rgba(0,0,0,.45);flex-shrink:0;width:160px;}
+.tlm-attr-v{font-size:10px;color:#1a4a8a;font-weight:600;}
+.tlm-attr-v.hi{color:#1a7a3a;}
+.tlm-attr-v.warn{color:#b86000;}
+.tlm-flow-arrow{text-align:center;font-size:11px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;padding:8px 0;display:flex;align-items:center;gap:8px;margin-bottom:12px;}
+.tlm-flow-arrow::before,.tlm-flow-arrow::after{content:'';flex:1;height:1px;background:var(--bd);}
+.tlm-send-btn{width:100%;padding:13px;border:none;font-size:12px;font-weight:600;font-family:var(--ss);cursor:pointer;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;}
+.tlm-send-btn.email{background:#1a2e1a;color:#fff;}
+.tlm-send-btn.email:hover{background:#0d1e0d;}
+.tlm-send-btn.sms{background:#1a0a2e;color:#fff;}
+.tlm-send-btn.sms:hover{background:#0d051e;}
+.tlm-send-btn.dsp{background:#2e1a0a;color:#fff;}
+.tlm-send-btn.dsp:hover{background:#1e0d00;}
+.tlm-partner-note{font-size:10px;color:var(--tx3);text-align:center;margin-top:8px;}
+
 </style>
 </head>
 <body>
@@ -427,7 +461,7 @@ button{font-family:var(--ss);cursor:pointer;border:0;background:none;}
 <div id="eml-ovl" onclick="if(event.target===this)closeEml()">
   <div class="eml-wrap">
     <button class="eml-x" onclick="closeEml()">&#215;</button>
-    <div class="eml-topbar"><div class="eml-toplabel">Email Preview &mdash; Tealium Triggered</div></div>
+    <div class="eml-topbar"><div class="eml-toplabel">Email Preview</div></div>
     <div class="eml-subjbar">
       <div class="eml-sr"><div class="eml-sl">From:</div><div class="eml-sv">Abercrombie &lt;abercrombie@tm.abercrombie.com&gt;</div></div>
       <div class="eml-sr"><div class="eml-sl">To:</div><div class="eml-sv">maya.r@example.com</div></div>
@@ -461,7 +495,7 @@ button{font-family:var(--ss);cursor:pointer;border:0;background:none;}
         <div class="eml-flegal">&copy; 2026 Abercrombie &amp; Fitch Co. All Rights Reserved.</div>
       </div>
       <div class="eml-mstrip">
-        <div class="eml-mtitle">Merkury signals — CDP activation (Tealium AudienceStream)</div>
+        <div class="eml-mtitle">Merkury signals — email activation</div>
         <div class="eml-mpills">
           <div class="eml-pill tr"><span>email_engagement:</span> ee_active</div>
           <div class="eml-pill tr"><span>loyalty_tier:</span> myAbercrombie_gold</div>
@@ -479,7 +513,7 @@ button{font-family:var(--ss);cursor:pointer;border:0;background:none;}
 <div id="sms-ovl" onclick="if(event.target===this)closeSms()">
   <div class="sms-wrap">
     <button class="sms-x" onclick="closeSms()">&#215;</button>
-    <div class="sms-topbar"><div class="sms-ticon">&#128242;</div><div><div class="sms-ttitle">SMS Re-engagement — Tealium Triggered</div><div class="sms-tsub">Powered by Merkury Identity</div></div></div>
+    <div class="sms-topbar"><div class="sms-ticon">&#128242;</div><div><div class="sms-ttitle">SMS Re-engagement</div><div class="sms-tsub">Powered by Merkury Identity</div></div></div>
     <div class="sms-body">
       <div class="sms-alabel">Merkury Audience</div>
       <div class="sms-acard">
@@ -509,9 +543,9 @@ button{font-family:var(--ss);cursor:pointer;border:0;background:none;}
       <div class="sms-vlabel">Message Variants — Generated from Merkury Signals</div>
       <div class="sms-v on" onclick="pickSmsV(0,this)"><div class="sms-vl">Recommended</div><div class="sms-vt">A&amp;F: Jake, we've missed you. New denim just dropped — and your 20% member discount is still waiting. Shop now &#8594; anf.com/denim Code: BACK20</div></div>
       <div class="sms-v" onclick="pickSmsV(1,this)"><div class="sms-vl">Alternative</div><div class="sms-vt">A&amp;F: Hey Jake! It's been a while. New men's denim in your size — your 20% is still on. Check it out &#8594; anf.com/denim Code: BACK20</div></div>
-      <div class="sms-platrow"><div class="sms-platn">Delivered via SMS Platform</div><div class="sms-platb">Tealium Triggered</div></div>
+      <div class="sms-platrow"><div class="sms-platn">Delivered via SMS Partner</div><div class="sms-platb">Partner Platform</div></div>
       <div class="sms-mstrip">
-        <div class="sms-mtitle">Merkury signals — Tealium AudienceStream audience</div>
+        <div class="sms-mtitle">Merkury signals — SMS activation</div>
         <div class="sms-mpills">
           <div class="sms-mp tr"><span>days_since_last_purchase:</span> 91</div>
           <div class="sms-mp tr"><span>email_engagement:</span> ee_lapsed</div>
@@ -528,7 +562,7 @@ button{font-family:var(--ss);cursor:pointer;border:0;background:none;}
 <!-- ══ DISPLAY AD MODAL (Priya) ══════════════════════════════════════ -->
 <div id="dsp-ovl" onclick="if(event.target===this)closeDsp()">
   <div class="dsp-wrap">
-    <div class="dsp-photo" style="background:url('https://img.abercrombie.com/is/image/anf/ANF-2026-031526-D-HP-NA-USCA-W.jpg') center/cover no-repeat;">
+    <div class="dsp-photo" style="background:url('https://img.abercrombie.com/is/image/anf/KIC_159-7033-00435-234_model1?policy=product-medium') center top/cover no-repeat;">
       <div class="dsp-ovlg"></div>
       <button class="dsp-x" onclick="closeDsp()">&#215;</button>
       <div class="dsp-txtbox"><div class="dsp-ey">New Visitor — Women's Apparel</div><div class="dsp-h2">Discover<br>Effortless Classics.</div></div>
@@ -604,15 +638,15 @@ button{font-family:var(--ss);cursor:pointer;border:0;background:none;}
     <div class="int-hdr" id="int-hdr">&#9889; Activations</div>
     <button class="int-btn idp" onclick="openIdp();closeIntTab()"><span class="int-ico">&#128477;</span>Merkury Identity Resolved</button>
     <div id="int-maya" style="display:none">
-      <button class="int-btn eml" onclick="openEml()"><span class="int-ico">&#128231;</span>Abandoned Cart Email — Tealium Triggered</button>
+      <button class="int-btn eml" onclick="openTlm('maya')"><span class="int-ico">&#128231;</span>Abandoned Cart Email</button>
       <button class="int-btn ofr" onclick="openOfr()"><span class="int-ico">&#10022;</span>Gold Member Offer</button>
     </div>
     <div id="int-jake" style="display:none">
-      <button class="int-btn sms" onclick="openSms()"><span class="int-ico">&#128242;</span>SMS Re-engagement — Tealium Triggered</button>
+      <button class="int-btn sms" onclick="openTlm('jake')"><span class="int-ico">&#128242;</span>SMS Re-engagement</button>
       <button class="int-btn ofr" onclick="openOfr()"><span class="int-ico">&#128722;</span>Win-back Offer — 20% Off</button>
     </div>
     <div id="int-priya" style="display:none">
-      <button class="int-btn dsp" onclick="openDsp()"><span class="int-ico">&#128444;</span>Display Ad — DSP Acquisition</button>
+      <button class="int-btn dsp" onclick="openTlm('priya')"><span class="int-ico">&#128444;</span>Display Ad — DSP Acquisition</button>
       <button class="int-btn ofr" onclick="openOfr()"><span class="int-ico">&#127381;</span>First-Visit Offer — 10% Off</button>
     </div>
     <button class="int-btn swt" onclick="openPswPanel()"><span style="margin-right:4px">&#8635;</span> Switch Persona</button>
@@ -816,8 +850,8 @@ var PAYLOADS = {
 // ── HERO VARIANTS ──────────────────────────────────────────────────
 var HV = {
   default:{ home:{ey:'',h1:'Hotel<br>Abercrombie',sub:'New sun-ready looks are made to getaway.',c1:"SHOP WOMEN'S",c2:"SHOP MEN'S"}, w:{h1:"Women's",sub:'New arrivals · Spring Preview · Effortless Classics'}, m:{h1:"Men's",sub:'New arrivals · Spring Preview · Bestsellers'} },
-  maya:{ home:{ey:'Welcome back, myAbercrombie Gold Member',h1:'Your Spring<br>Picks Are Here',sub:'New dresses and matching sets — plus your exclusive 20% member discount.',c1:'SHOP MY PICKS',c2:'VIEW MEMBER DEALS',bg:'https://img.abercrombie.com/is/image/anf/ANF-2026-031526-D-HP-NA-USCA-W.jpg'}, w:{h1:"Women's New Dresses & Sets",sub:"Curated based on your purchase history — new dresses and sets you'll love."}, m:{h1:"Men's New Arrivals",sub:''} },
-  jake:{ home:{ey:"We've Missed You — Back for More?",h1:'New Denim<br>Just Dropped',sub:"You haven't shopped in a while. Fresh denim and new fits are waiting.",c1:'SHOP NEW DENIM',c2:"SEE MEN'S",bg:'https://img.abercrombie.com/is/image/anf/ANF-2026-031526-D-HP-NA-USCA-M.jpg'}, w:{h1:"Women's New Arrivals",sub:''}, m:{h1:"Men's Denim &<br>New Arrivals",sub:"New denim fits and spring essentials picked for you. Welcome back, Jake."} },
+  maya:{ home:{ey:'Welcome back, myAbercrombie Gold Member',h1:'Your Spring<br>Picks Are Here',sub:'New dresses and matching sets — plus your exclusive 20% member discount.',c1:'SHOP MY PICKS',c2:'VIEW MEMBER DEALS',bg:'https://img.abercrombie.com/is/image/anf/KIC_159-7046-00030-416_model1?policy=product-medium'}, w:{h1:"Women's New Dresses & Sets",sub:"Curated based on your purchase history — new dresses and sets you'll love."}, m:{h1:"Men's New Arrivals",sub:''} },
+  jake:{ home:{ey:"We've Missed You — Back for More?",h1:'New Denim<br>Just Dropped',sub:"You haven't shopped in a while. Fresh denim and new fits are waiting.",c1:'SHOP NEW DENIM',c2:"SEE MEN'S",bg:'https://img.abercrombie.com/is/image/anf/KIC_131-5149-00372-280_life2?policy=product-extra-large'}, w:{h1:"Women's New Arrivals",sub:''}, m:{h1:"Men's Denim &<br>New Arrivals",sub:"New denim fits and spring essentials picked for you. Welcome back, Jake."} },
   priya:{ home:{ey:"Hello — We're Glad You Found Us",h1:'Discover<br>A&amp;F',sub:"Effortless classics, quality you can feel. Free shipping on your first order over $99.",c1:"SHOP WOMEN'S",c2:'JOIN myAbercrombie',bg:'https://img.abercrombie.com/is/image/anf/ANF-2026-FebWk1-D-HP-SpringPreview-Part2-Dual-1.jpg'}, w:{h1:"Women's Bestsellers",sub:"Our most-loved tops and dresses — a perfect place to start."}, m:{h1:"Men's New Arrivals",sub:''} }
 };
 
@@ -1023,6 +1057,7 @@ function renderIdp(key,lat){
 
 // ── INTEGRATION TAB ────────────────────────────────────────────────
 function closeAllModals(){
+  var tlm=document.getElementById('tlm-card-ovl');if(tlm)tlm.classList.remove('on');
   ['eml-ovl','sms-ovl','dsp-ovl','ofr-ovl'].forEach(function(id){
     var el=document.getElementById(id);if(el)el.classList.remove('on');
   });
@@ -1109,7 +1144,7 @@ function closeFav(){document.getElementById('fav-drawer').classList.remove('on')
 function closeDrawers(){closeCart();closeFav();}
 
 // ── ESC KEY ────────────────────────────────────────────────────────
-document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeEml();closeSms();closeDsp();closeOfr();closeIdp();closeIntTab();closeSignin();}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeEml();closeSms();closeDsp();closeOfr();closeIdp();closeIntTab();closeSignin();closeTlm();}});
 
 // ── INIT ───────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded',function(){
@@ -1119,7 +1154,128 @@ document.addEventListener('DOMContentLoaded',function(){
   document.getElementById('idp-tab').classList.add('on');
   setTimeout(function(){merkuryResolve('default');},120);
 });
+
+// ══ TEALIUM AUDIENCE CARD ══════════════════════════════════════════
+var TLM_CONFIG = {
+  maya: {
+    audName: 'Abandoned Cart — myAbercrombie Members',
+    audSize: '14,203 profiles matched · Last synced 4 min ago',
+    attrs: [
+      {k:'merkury_person_id',  v:'MRK-4821-A3F9',        cls:'hi'},
+      {k:'confidence_score',   v:'1 (deterministic)',     cls:'hi'},
+      {k:'loyalty_tier',       v:'myAbercrombie_gold',    cls:'hi'},
+      {k:'purchase_propensity',v:'high',                  cls:'hi'},
+      {k:'category_affinity',  v:'womens_dresses',        cls:''},
+      {k:'days_since_purchase',v:'14',                    cls:''},
+      {k:'email_reachable',    v:'true',                  cls:'hi'},
+      {k:'cart_abandon_event', v:'true (triggered)',      cls:'warn'},
+    ],
+    btnClass: 'email',
+    btnLabel: '&#128231; Send via Cordial — Abandoned Cart',
+    partnerNote: "Cordial ESP · Triggered send · Audience: Loyalty Gold + cart abandon",
+    action: 'email'
+  },
+  jake: {
+    audName: 'Lapsed Members — Men’s Affinity — SMS Eligible',
+    audSize: '2,841 profiles matched · Last synced 11 min ago',
+    attrs: [
+      {k:'merkury_person_id',    v:'MRK-7133-C6D2',      cls:'hi'},
+      {k:'confidence_score',     v:'2 (deterministic)',   cls:'hi'},
+      {k:'loyalty_tier',         v:'myAbercrombie_silver',cls:''},
+      {k:'days_since_purchase',  v:'91',                  cls:'warn'},
+      {k:'email_engagement',     v:'ee_lapsed',           cls:'warn'},
+      {k:'category_affinity',    v:'mens_denim',          cls:''},
+      {k:'preferred_channel',    v:'sms',                 cls:'hi'},
+      {k:'sms_reachable',        v:'true',                cls:'hi'},
+    ],
+    btnClass: 'sms',
+    btnLabel: '&#128242; Send via SMS Platform — Re-engagement',
+    partnerNote: "SMS platform · Suppressed from email · Routed via Tealium audience rule",
+    action: 'sms'
+  },
+  priya: {
+    audName: "Net-New Browsers — Women's High Intent — DSP",
+    audSize: '38,410 profiles matched · Last synced 2 min ago',
+    attrs: [
+      {k:'merkury_person_id',    v:'MRK-9902-B1E7',      cls:'hi'},
+      {k:'confidence_score',     v:'5 (probabilistic)',   cls:'warn'},
+      {k:'match_type',           v:'probabilistic',       cls:'warn'},
+      {k:'hmid',                 v:'A3F9B2C10041D8',      cls:''},
+      {k:'purchase_propensity',  v:'high',                cls:'hi'},
+      {k:'in_market_flag',       v:'Y',                   cls:'hi'},
+      {k:'loyalty_tier',         v:'none — no CRM record',cls:'warn'},
+      {k:'hh_income_range',      v:'hhi_band_7',          cls:''},
+    ],
+    btnClass: 'dsp',
+    btnLabel: '&#128444; Activate via DSP — Prospecting',
+    partnerNote: "DSP activation · No email on file · Targeting via Merkury HMID",
+    action: 'dsp'
+  }
+};
+
+var tlmPendingAction = null;
+
+function openTlm(key) {
+  var cfg = TLM_CONFIG[key]; if(!cfg) return;
+  tlmPendingAction = cfg.action;
+  document.getElementById('tlm-aud-name').textContent = cfg.audName;
+  document.getElementById('tlm-aud-size').textContent = cfg.audSize;
+  // Render attrs
+  var attrsEl = document.getElementById('tlm-attrs');
+  attrsEl.innerHTML = cfg.attrs.map(function(a){
+    return '<div class="tlm-attr-row"><span class="tlm-attr-k">'+a.k+'</span><span class="tlm-attr-v '+a.cls+'">'+a.v+'</span></div>';
+  }).join('');
+  // Send button
+  var btn = document.getElementById('tlm-send-btn');
+  btn.className = 'tlm-send-btn ' + cfg.btnClass;
+  btn.innerHTML = cfg.btnLabel;
+  document.getElementById('tlm-partner-note').textContent = cfg.partnerNote;
+  // Show
+  closeIntTab();
+  document.getElementById('tlm-card-ovl').classList.add('on');
+  document.body.style.overflow = 'hidden';
+}
+function closeTlm(){
+  document.getElementById('tlm-card-ovl').classList.remove('on');
+  document.body.style.overflow = '';
+  tlmPendingAction = null;
+}
+function tlmProceed(){
+  closeTlm();
+  if(tlmPendingAction === 'email') openEml();
+  else if(tlmPendingAction === 'sms') openSms();
+  else if(tlmPendingAction === 'dsp') openDsp();
+}
+
 </script>
+
+<!-- ══ TEALIUM AUDIENCE CARD ════════════════════════════════════════ -->
+<div id="tlm-card-ovl" onclick="if(event.target===this)closeTlm()">
+  <div class="tlm-card">
+    <div class="tlm-topbar">
+      <div class="tlm-topbar-left">
+        <div>
+          <div class="tlm-topbar-logo">Tealium AudienceStream</div>
+          <div class="tlm-topbar-sub">Audience Profile — Merkury Enriched</div>
+        </div>
+      </div>
+      <button class="tlm-x" onclick="closeTlm()">&#215;</button>
+    </div>
+    <div class="tlm-body">
+      <div class="tlm-section-label">Matched Audience</div>
+      <div class="tlm-audience-row">
+        <div class="tlm-audience-name" id="tlm-aud-name"></div>
+        <div class="tlm-audience-size" id="tlm-aud-size"></div>
+      </div>
+      <div class="tlm-section-label">Merkury Attributes Written to Profile</div>
+      <div class="tlm-attrs" id="tlm-attrs"></div>
+      <div class="tlm-flow-arrow">activating via</div>
+      <button class="tlm-send-btn" id="tlm-send-btn" onclick="tlmProceed()"></button>
+      <div class="tlm-partner-note" id="tlm-partner-note"></div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>"""
 
