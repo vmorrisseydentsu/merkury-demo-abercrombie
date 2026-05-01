@@ -1256,12 +1256,14 @@ function closeTlm(){
   tlmPendingAction = null;
 }
 function tlmProceed(){
+  var action = tlmPendingAction;
   closeTlm();
-  if(tlmPendingAction === 'email') openEml();
-  else if(tlmPendingAction === 'sms') openSms();
-  else if(tlmPendingAction === 'dsp') openDsp();
+  setTimeout(function(){
+    if(action === 'email') openEml();
+    else if(action === 'sms') openSms();
+    else if(action === 'dsp') openDsp();
+  }, 80);
 }
-
 </script>
 
 <!-- ══ TEALIUM AUDIENCE CARD ════════════════════════════════════════ -->
