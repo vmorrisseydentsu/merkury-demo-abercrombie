@@ -409,38 +409,16 @@ button{font-family:var(--ss);cursor:pointer;border:0;background:none;}
 @media(max-width:1024px){:root{--g:24px;}.hgrid,.pgrid{grid-template-columns:repeat(2,1fr);}.pband .w{grid-template-columns:1fr;gap:4px;}.footer-grid{grid-template-columns:1fr 1fr 1fr;}.ct-grid{grid-template-columns:1fr;}}
 @media(max-width:768px){.nlinks{display:none;}.pgrid,.hgrid{grid-template-columns:repeat(2,1fr);}.footer-grid{grid-template-columns:1fr 1fr;}#psw{bottom:16px;right:16px;}}
 
-/* ══ TEALIUM AUDIENCE CARD ════════════════════════════════════════ */
-#tlm-card-ovl{display:none;position:fixed;inset:0;z-index:9400;background:rgba(0,0,0,.6);backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:20px;}
-#tlm-card-ovl.on{display:flex;}
-.tlm-card{background:#fff;max-width:480px;width:100%;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.3);position:relative;}
-.tlm-topbar{background:#0d1a2e;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;}
-.tlm-topbar-left{display:flex;align-items:center;gap:10px;}
-.tlm-topbar-logo{font-size:13px;font-weight:700;color:#fff;letter-spacing:.04em;}
-.tlm-topbar-sub{font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.06em;text-transform:uppercase;}
-.tlm-x{background:none;border:none;font-size:20px;color:rgba(255,255,255,.5);cursor:pointer;line-height:1;}
-.tlm-x:hover{color:#fff;}
-.tlm-body{padding:20px 24px;}
-.tlm-section-label{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--tx3);margin-bottom:10px;}
-.tlm-audience-row{background:#f7f4f0;border-left:3px solid #0d1a2e;padding:12px 16px;margin-bottom:16px;}
-.tlm-audience-name{font-size:14px;font-weight:600;color:var(--tx);margin-bottom:3px;}
-.tlm-audience-size{font-size:11px;color:var(--tx3);}
-.tlm-attrs{margin-bottom:16px;}
-.tlm-attr-row{display:flex;gap:6px;align-items:flex-start;padding:6px 0;border-bottom:1px solid var(--lt);font-family:'Courier New',monospace;}
-.tlm-attr-row:last-child{border-bottom:none;}
-.tlm-attr-k{font-size:10px;color:rgba(0,0,0,.45);flex-shrink:0;width:160px;}
-.tlm-attr-v{font-size:10px;color:#1a4a8a;font-weight:600;}
+
 .tlm-attr-v.hi{color:#1a7a3a;}
 .tlm-attr-v.warn{color:#b86000;}
-.tlm-flow-arrow{text-align:center;font-size:11px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;padding:8px 0;display:flex;align-items:center;gap:8px;margin-bottom:12px;}
 .tlm-flow-arrow::before,.tlm-flow-arrow::after{content:'';flex:1;height:1px;background:var(--bd);}
-.tlm-send-btn{width:100%;padding:13px;border:none;font-size:12px;font-weight:600;font-family:var(--ss);cursor:pointer;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;}
 .tlm-send-btn.email{background:#1a2e1a;color:#fff;}
 .tlm-send-btn.email:hover{background:#0d1e0d;}
 .tlm-send-btn.sms{background:#1a0a2e;color:#fff;}
 .tlm-send-btn.sms:hover{background:#0d051e;}
 .tlm-send-btn.dsp{background:#2e1a0a;color:#fff;}
 .tlm-send-btn.dsp:hover{background:#1e0d00;}
-.tlm-partner-note{font-size:10px;color:var(--tx3);text-align:center;margin-top:8px;}
 
 </style>
 </head>
@@ -471,7 +449,7 @@ button{font-family:var(--ss);cursor:pointer;border:0;background:none;}
       <div class="eml-anf-hdr"><div class="eml-anf-logo">Abercrombie &amp; Fitch</div></div>
       <div class="eml-anf-hero">
         <div class="eml-anf-h1">Your Shopping Bag<br>Misses You</div>
-        <div class="eml-anf-sub">You left something behind, Maya. As a myAbercrombie Gold member, your exclusive 20% discount is still applied.</div>
+        <div class="eml-anf-sub">You left something behind, Maya. As a myAbercrombie Gold member, your exclusive 15% member discount is still applied.</div>
       </div>
       <div class="eml-product">
         <div class="eml-product-img" style="background:url('https://img.abercrombie.com/is/image/anf/KIC_111-6319-00053-404_model1?policy=product-medium') center top/cover no-repeat;"></div>
@@ -480,14 +458,14 @@ button{font-family:var(--ss);cursor:pointer;border:0;background:none;}
           <div class="eml-pname">Scoopneck Flowy Mini Dress</div>
           <div class="eml-pdetail">Size: S &nbsp;|&nbsp; Color: Rose Blush &nbsp;|&nbsp; Qty: 1</div>
           <div class="eml-pprice">$110</div>
-          <div class="eml-pmember">myAbercrombie Gold: $88.00 (20% off)</div>
+          <div class="eml-pmember">myAbercrombie Gold: $93.50 (15% off)</div>
         </div>
       </div>
       <div class="eml-copy">These sell fast. Your size is still available.</div>
       <div class="eml-cta-wrap"><div class="eml-cta">Complete My Purchase</div></div>
       <div class="eml-loyalty">
         <div class="eml-loyalty-ico">&#10022;</div>
-        <div class="eml-loyalty-txt"><strong>myAbercrombie Gold perk:</strong> Your 20% member discount is automatically applied at checkout. No code needed.</div>
+        <div class="eml-loyalty-txt"><strong>myAbercrombie Gold perk:</strong> Your 15% member discount is automatically applied at checkout. No code needed.</div>
       </div>
       <div class="eml-footer">
         <div class="eml-flogo">Abercrombie &amp; Fitch</div>
@@ -536,13 +514,13 @@ button{font-family:var(--ss);cursor:pointer;border:0;background:none;}
             <div class="sms-notch"></div>
             <div class="sms-status"><div class="sms-time">9:41 AM</div><div style="font-size:10px;color:#1a1a1a">&#9679;&#9679;&#9679;</div></div>
             <div class="sms-phdr"><div class="sms-pname">A&amp;F</div><div class="sms-ptype">Text Message</div></div>
-            <div class="sms-thread"><div class="sms-bubble" id="sms-bubble">A&amp;F: Jake, we've missed you. New denim just dropped — and your 20% member discount is still waiting. Shop now &#8594; anf.com/denim Code: BACK20</div></div>
+            <div class="sms-thread"><div class="sms-bubble" id="sms-bubble">A&amp;F: Jake, we've missed you. New denim just dropped — and your 20% member discount is still waiting. Shop now &#8594; anf.com/denim Code: DENIM20</div></div>
           </div>
         </div>
       </div>
       <div class="sms-vlabel">Message Variants — Generated from Merkury Signals</div>
-      <div class="sms-v on" onclick="pickSmsV(0,this)"><div class="sms-vl">Recommended</div><div class="sms-vt">A&amp;F: Jake, we've missed you. New denim just dropped — and your 20% member discount is still waiting. Shop now &#8594; anf.com/denim Code: BACK20</div></div>
-      <div class="sms-v" onclick="pickSmsV(1,this)"><div class="sms-vl">Alternative</div><div class="sms-vt">A&amp;F: Hey Jake! It's been a while. New men's denim in your size — your 20% is still on. Check it out &#8594; anf.com/denim Code: BACK20</div></div>
+      <div class="sms-v on" onclick="pickSmsV(0,this)"><div class="sms-vl">Recommended</div><div class="sms-vt">A&amp;F: Jake, we've missed you. New denim just dropped — and your 20% member discount is still waiting. Shop now &#8594; anf.com/denim Code: DENIM20</div></div>
+      <div class="sms-v" onclick="pickSmsV(1,this)"><div class="sms-vl">Alternative</div><div class="sms-vt">A&amp;F: Hey Jake! It's been a while. New men's denim in your size — your 20% is still on. Check it out &#8594; anf.com/denim Code: DENIM20</div></div>
       <div class="sms-platrow"><div class="sms-platn">Delivered via SMS Partner</div><div class="sms-platb">Partner Platform</div></div>
       <div class="sms-mstrip">
         <div class="sms-mtitle">Merkury signals — SMS activation</div>
@@ -638,15 +616,15 @@ button{font-family:var(--ss);cursor:pointer;border:0;background:none;}
     <div class="int-hdr" id="int-hdr">&#9889; Activations</div>
     <button class="int-btn idp" onclick="openIdp();closeIntTab()"><span class="int-ico">&#128477;</span>Merkury Identity Resolved</button>
     <div id="int-maya" style="display:none">
-      <button class="int-btn eml" onclick="openTlm('maya')"><span class="int-ico">&#128231;</span>Abandoned Cart Email</button>
+      <button class="int-btn eml" onclick="openEml()"><span class="int-ico">&#128231;</span>Abandoned Cart Email</button>
       <button class="int-btn ofr" onclick="openOfr()"><span class="int-ico">&#10022;</span>Gold Member Offer</button>
     </div>
     <div id="int-jake" style="display:none">
-      <button class="int-btn sms" onclick="openTlm('jake')"><span class="int-ico">&#128242;</span>SMS Re-engagement</button>
+      <button class="int-btn sms" onclick="openSms()"><span class="int-ico">&#128242;</span>SMS Re-engagement</button>
       <button class="int-btn ofr" onclick="openOfr()"><span class="int-ico">&#128722;</span>Win-back Offer — 20% Off</button>
     </div>
     <div id="int-priya" style="display:none">
-      <button class="int-btn dsp" onclick="openTlm('priya')"><span class="int-ico">&#128444;</span>Display Ad — DSP Acquisition</button>
+      <button class="int-btn dsp" onclick="openDsp()"><span class="int-ico">&#128444;</span>Display Ad — DSP Acquisition</button>
       <button class="int-btn ofr" onclick="openOfr()"><span class="int-ico">&#127381;</span>First-Visit Offer — 10% Off</button>
     </div>
     <button class="int-btn swt" onclick="openPswPanel()"><span style="margin-right:4px">&#8635;</span> Switch Persona</button>
@@ -719,21 +697,21 @@ button{font-family:var(--ss);cursor:pointer;border:0;background:none;}
   <section class="hgrid-sec"><div class="w">
     <h2 id="home-grid-h2">Effortless Classics</h2>
     <div class="hgrid">
-      <div class="hgi" onclick="showPage('womens')"><div class="hgi-photo"><div class="hgi-photo-in" id="hg1" style="background-image:url('https://img.abercrombie.com/is/image/anf/ANF-2026-031526-D-HP-NA-USCA-W.jpg')"></div></div><div class="hgi-label" id="hg1-lbl">New Dresses</div><div class="hgi-sub">Women's</div></div>
-      <div class="hgi" onclick="showPage('mens')"><div class="hgi-photo"><div class="hgi-photo-in" style="background-image:url('https://img.abercrombie.com/is/image/anf/ANF-2026-031526-D-HP-NA-USCA-M.jpg')"></div></div><div class="hgi-label" id="hg2-lbl">Spring Essentials</div><div class="hgi-sub">Men's</div></div>
-      <div class="hgi" onclick="showPage('womens')"><div class="hgi-photo"><div class="hgi-photo-in" style="background-image:url('https://img.abercrombie.com/is/image/anf/ANF-2026-FebWk1-D-HP-SpringPreview-Part2-Dual-2.jpg')"></div></div><div class="hgi-label" id="hg3-lbl">Matching Sets</div><div class="hgi-sub">Women's</div></div>
-      <div class="hgi" onclick="showPage('mens')"><div class="hgi-photo"><div class="hgi-photo-in" style="background-image:url('https://img.abercrombie.com/is/image/anf/ANF-2026-031226-D-HP-FLEECE-USCA.jpg')"></div></div><div class="hgi-label" id="hg4-lbl">Heritage Collection</div><div class="hgi-sub">Men's</div></div>
+      <div class="hgi" onclick="showPage('womens')"><div class="hgi-photo"><div class="hgi-photo-in" id="hg1" style="background-image:url('https://img.abercrombie.com/is/image/anf/ANF-2026-AprWk4-D-HP-New-Arrivals-USCA-W.jpg')"></div></div><div class="hgi-label" id="hg1-lbl">New Dresses</div><div class="hgi-sub">Women's</div></div>
+      <div class="hgi" onclick="showPage('mens')"><div class="hgi-photo"><div class="hgi-photo-in" style="background-image:url('https://img.abercrombie.com/is/image/anf/ANF-2026-AprWk4-D-HP-New-Arrivals-USCA-M.jpg')"></div></div><div class="hgi-label" id="hg2-lbl">Spring Essentials</div><div class="hgi-sub">Men's</div></div>
+      <div class="hgi" onclick="showPage('womens')"><div class="hgi-photo"><div class="hgi-photo-in" style="background-image:url('https://img.abercrombie.com/is/image/anf/ANF-2026-AprWk4-D-HP-Dresses-W.jpg')"></div></div><div class="hgi-label" id="hg3-lbl">Matching Sets</div><div class="hgi-sub">Women's</div></div>
+      <div class="hgi" onclick="showPage('mens')"><div class="hgi-photo"><div class="hgi-photo-in" style="background-image:url('https://img.abercrombie.com/is/image/anf/ANF-2026-AprWk4-D-HP-YPB-W.jpg')"></div></div><div class="hgi-label" id="hg4-lbl">Heritage Collection</div><div class="hgi-sub">Men's</div></div>
     </div>
   </div></section>
 
   <div class="pband"><div class="w">
     <div class="ptile" onclick="showPage('womens')">
-      <div class="ptile-p"><div class="ptile-p-in" id="pt1" style="background-image:url('https://img.abercrombie.com/is/image/anf/ANF-2026-031226-M-HP-NA-USCA-W.jpg')"></div></div>
+      <div class="ptile-p"><div class="ptile-p-in" id="pt1" style="background-image:url('https://img.abercrombie.com/is/image/anf/ANF-2026-AprWk4-D-HP-Categories-SALO-Swim.jpg')"></div></div>
       <div class="ptile-ovl"></div>
       <div class="ptile-c"><div class="ptile-ey" id="pt1-ey">New In</div><div class="ptile-t" id="pt1-t">High Tide<br>Swim</div><a class="ptile-cta">SHOP WOMEN'S</a></div>
     </div>
     <div class="ptile" onclick="showPage('mens')">
-      <div class="ptile-p"><div class="ptile-p-in" style="background-image:url('https://img.abercrombie.com/is/image/anf/ANF-2026-031226-M-HP-NA-USCA-M.jpg')"></div></div>
+      <div class="ptile-p"><div class="ptile-p-in" style="background-image:url('https://img.abercrombie.com/is/image/anf/ANF-2026-AprWk4-D-HP-SALO-D-M.jpg')"></div></div>
       <div class="ptile-ovl"></div>
       <div class="ptile-c"><div class="ptile-ey" id="pt2-ey">New In</div><div class="ptile-t" id="pt2-t">Premium<br>Heavyweight Tee</div><a class="ptile-cta">SHOP MEN'S</a></div>
     </div>
@@ -827,7 +805,8 @@ var PAYLOADS = {
     age_range:'age_band_3', gender:'gender_F', hh_income_range:'hhi_band_6', life_stage:'young_adult',
     purchase_propensity:'high', category_affinity:'womens_dresses', loyalty_tier:'myAbercrombie_gold',
     days_since_last_purchase:14, avg_order_value:'$112',
-    email_reachable:'true', preferred_channel:'email', in_store_shopper:'true', app_installed:'true'
+    email_reachable:'true', preferred_channel:'email', in_store_shopper:'true', app_installed:'true',
+    tlm_audience:'Abandoned Cart — myAbercrombie Members', cart_abandon_event:'true (triggered)'
   }}},
   jake:{ d:{ response:'match', version:'1.0.0', data:{
     dentsu_id:'7133C6D2A8F200E1', crm_id:'00509312',
@@ -835,30 +814,32 @@ var PAYLOADS = {
     age_range:'age_band_4', gender:'gender_M', hh_income_range:'hhi_band_5', life_stage:'young_adult',
     purchase_propensity:'medium', category_affinity:'mens_denim', loyalty_tier:'myAbercrombie_silver',
     days_since_last_purchase:91, avg_order_value:'$78',
-    email_reachable:'true', preferred_channel:'sms', in_store_shopper:'false', app_installed:'false'
+    email_reachable:'true', preferred_channel:'sms', in_store_shopper:'false', app_installed:'false',
+    tlm_audience:'Lapsed Members — Men’s Denim Affinity — SMS Eligible'
   }}},
   priya:{ d:{ response:'match', version:'1.0.0', data:{
-    dentsu_id:'9902B1E7D3F400C5', crm_id:null,
+    dentsu_id:'9902B1E7D3F400C5', crm_id:'',
     confidence_score:5, match_type:'probabilistic',
     age_range:'age_band_3', gender:'gender_F', hh_income_range:'hhi_band_7', life_stage:'young_adult',
     purchase_propensity:'high', category_affinity:'womens_tops', loyalty_tier:'none',
     days_since_last_purchase:999, avg_order_value:'$0',
-    email_reachable:'true', preferred_channel:'display', in_store_shopper:'false', app_installed:'false'
+    email_reachable:'true', preferred_channel:'display', in_store_shopper:'false', app_installed:'false',
+    tlm_audience:'Net-New Browsers — Women’s High Intent — DSP', hmid:'A3F9B2C10041D8'
   }}}
 };
 
 // ── HERO VARIANTS ──────────────────────────────────────────────────
 var HV = {
-  default:{ home:{ey:'',h1:'New Arrivals<br>for Everyone',sub:'Discover the latest styles for women and men. Free shipping on orders over $99.',c1:"SHOP WOMEN'S",c2:"SHOP MEN'S"}, w:{h1:"Women's",sub:'Shop the latest arrivals in tops, dresses, denim and more.'}, m:{h1:"Men's",sub:'Shop the latest arrivals in shirts, jeans, shorts and more.'} },
-  maya:{ home:{ey:'Welcome back, myAbercrombie Gold Member',h1:'Your Spring<br>Picks Are Here',sub:'New dresses and matching sets — plus your exclusive 20% member discount.',c1:'SHOP MY PICKS',c2:'VIEW MEMBER DEALS',bg:'https://img.abercrombie.com/is/image/anf/KIC_159-6890-00386-100_life1?policy=product-extra-large'}, w:{h1:"Women's New Dresses & Sets",sub:"Curated based on your purchase history — new dresses and sets you'll love."}, m:{h1:"Men's New Arrivals",sub:''} },
+  default:{ home:{ey:'',h1:'New Arrivals<br>for Everyone',sub:'Discover the latest styles for women and men. Free shipping on orders over $99.',c1:"SHOP WOMEN'S",c2:"SHOP MEN'S",bg:'https://img.abercrombie.com/is/image/anf/ANF-2026-AprWk4-D-HP-New-Arrivals-USCA-W.jpg'}, w:{h1:"Women's",sub:'Shop the latest arrivals in tops, dresses, denim and more.'}, m:{h1:"Men's",sub:'Shop the latest arrivals in shirts, jeans, shorts and more.'} },
+  maya:{ home:{ey:'Welcome back, myAbercrombie Gold Member',h1:'Your Spring<br>Picks Are Here',sub:'New dresses and matching sets — plus your exclusive 20% member discount.',c1:'SHOP MY PICKS',c2:'VIEW MEMBER DEALS',bg:'https://img.abercrombie.com/is/image/anf/KIC_159-7050-00382-516_model1?policy=product-extra-large'}, w:{h1:"Women's New Dresses & Sets",sub:"Curated based on your purchase history — new dresses and sets you'll love."}, m:{h1:"Men's New Arrivals",sub:''} },
   jake:{ home:{ey:"We've Missed You — Back for More?",h1:'New Denim<br>Just Dropped',sub:"You haven't shopped in a while. Fresh denim and new fits are waiting.",c1:'SHOP NEW DENIM',c2:"SEE MEN'S",bg:'https://img.abercrombie.com/is/image/anf/KIC_131-5149-00372-280_life2?policy=product-extra-large'}, w:{h1:"Women's New Arrivals",sub:''}, m:{h1:"Men's Denim &<br>New Arrivals",sub:"New denim fits and spring essentials picked for you. Welcome back, Jake."} },
-  priya:{ home:{ey:"Hello — We're Glad You Found Us",h1:'Discover<br>A&amp;F',sub:"Effortless classics, quality you can feel. Free shipping on your first order over $99.",c1:"SHOP WOMEN'S",c2:'JOIN myAbercrombie',bg:'https://img.abercrombie.com/is/image/anf/KIC_159-6890-00386-100_life1?policy=product-extra-large'}, w:{h1:"Women's Bestsellers",sub:"Our most-loved tops and dresses — a perfect place to start."}, m:{h1:"Men's New Arrivals",sub:''} }
+  priya:{ home:{ey:"Hello — We're Glad You Found Us",h1:'Discover<br>A&amp;F',sub:"Effortless classics, quality you can feel. Free shipping on your first order over $99.",c1:"SHOP WOMEN'S",c2:'JOIN myAbercrombie',bg:'https://img.abercrombie.com/is/image/anf/KIC_159-7050-00382-516_model1?policy=product-extra-large'}, w:{h1:"Women's Bestsellers",sub:"Our most-loved tops and dresses — a perfect place to start."}, m:{h1:"Men's New Arrivals",sub:''} }
 };
 
 // ── OFFER DATA ─────────────────────────────────────────────────────
 var OFR = {
-  maya: { persona:'Maya R. — myAbercrombie Gold', hl:'Your exclusive 20% is ready.', desc:'As a Gold member, your discount applies automatically at checkout. No code needed.', code:'AUTO-APPLIED' },
-  jake: { persona:'Jake M. — Welcome Back', hl:"Jake, your 20% off is waiting.", desc:"It's been a while and there's a lot of new denim we think you'll love.", code:'BACK20' },
+  maya: { persona:'Maya R. — myAbercrombie Gold', hl:'Your exclusive 15% is ready.', desc:'As a myAbercrombie member, your discount applies automatically at checkout. No code needed.', code:'GOLD15' },
+  jake: { persona:'Jake M. — Welcome Back', hl:"Jake, your 20% off is waiting.", desc:"It's been a while and there's a lot of new denim we think you'll love.", code:'DENIM20' },
   priya:{ persona:'New to A&F?', hl:'Welcome. 10% off your first order.', desc:"Effortless classics, quality you can feel. Join myAbercrombie for 10% off your first order.", code:'NEWFRIEND10' }
 };
 
@@ -978,7 +959,7 @@ function swapHome(v){
     var sub=document.getElementById('hhero-sub'); if(sub) sub.textContent=v.sub;
     var c1=document.getElementById('hhero-c1'); if(c1) c1.textContent=v.c1;
     var c2=document.getElementById('hhero-c2'); if(c2){c2.textContent=v.c2||'';c2.style.display=v.c2?'inline-block':'none';}
-    if(v.bg){var hbg=document.getElementById('hhero-bg');if(hbg)hbg.style.backgroundImage="url('"+v.bg+"')";}
+    if(v.bg){var hbg=document.getElementById('hhero-bg');if(hbg)hbg.style.backgroundImage="url('"+v.bg+"')";}}
     t.style.opacity='1';
   },200);
 }
@@ -1025,8 +1006,8 @@ function applyPersona(key, silent){
   updateBanners(key);
   // Loyalty strip
   var lh=document.getElementById('loy-h3'),lp=document.getElementById('loy-p'),lc=document.getElementById('loy-cta');
-  if(key==='maya'){if(lh)lh.textContent='Welcome back, Maya';if(lp)lp.innerHTML='Your myAbercrombie member perks are active. You earn 10 pts per $1 — your next $10 reward is on its way.';if(lc)lc.textContent='VIEW MY ACCOUNT';}
-  else if(key==='jake'){if(lh)lh.textContent="Jake — we've missed you";if(lp)lp.innerHTML='Your Silver membership is still active. Use BACK20 for 20% off.';if(lc)lc.textContent='CLAIM 20% OFF';}
+  if(key==='maya'){if(lh)lh.textContent='Welcome back, Maya';if(lp)lp.innerHTML='Your myAbercrombie member perks are active — 15% off + 10 pts per $1 spent.';if(lc)lc.textContent='VIEW MY ACCOUNT';}
+  else if(key==='jake'){if(lh)lh.textContent="Jake — we've missed you";if(lp)lp.innerHTML='Your Silver membership is still active. Use DENIM20 for 20% off.';if(lc)lc.textContent='CLAIM 20% OFF';}
   else if(key==='priya'){if(lh)lh.textContent='New to A&F?';if(lp)lp.innerHTML='Join myAbercrombie free — 10% off your first order.';if(lc)lc.textContent='JOIN FREE';}
   else{if(lh)lh.textContent='myAbercrombie';if(lp)lp.innerHTML='Join free and start earning 10 pts for every $1 you spend. Redeem for $10 rewards, access exclusives, and more.';if(lc)lc.textContent='JOIN OR SIGN IN';}
   // Switcher UI
@@ -1060,19 +1041,26 @@ function renderIdp(key,lat){
   var sc=d.confidence_score<=2?'hi':'warn', auth=d.authenticated==='true';
   var h='';
   if(auth) h+='<div style="display:inline-flex;align-items:center;gap:5px;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25);border-radius:3px;padding:3px 8px;margin-bottom:10px;font-family:var(--ss);font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#4ade80">&#10003; Authenticated &middot; myAbercrombie Gold</div>';
-  var crmVal = d.crm_id ? d.crm_id : 'null — no CRM record';
-  var crmCls = d.crm_id ? '' : 'warn';
+  var crmVal = (d.crm_id && d.crm_id !== '') ? d.crm_id : '—';
+  var crmCls = (d.crm_id && d.crm_id !== '') ? '' : 'warn';
   h+='<div class="idp-grp"><div class="idp-gl">Identity Resolution</div>'+rs('dentsu_id',d.dentsu_id,'hi')+rs('crm_id',crmVal,crmCls)+rn('confidence_score',d.confidence_score,sc)+rs('match_type',d.match_type,sc)+(auth?rs('session_state','signed_in','hi'):'')+'</div>';
   h+='<div class="idp-grp"><div class="idp-gl">Demographics</div>'+rs('age_range',d.age_range)+rs('gender',d.gender)+rs('hh_income_range',d.hh_income_range)+rs('life_stage',d.life_stage)+'</div>';
   h+='<div class="idp-grp"><div class="idp-gl">Behavioral / Purchase Signals</div>'+rs('purchase_propensity',d.purchase_propensity,d.purchase_propensity==='high'?'hi':'')+rs('category_affinity',d.category_affinity)+rs('loyalty_tier',d.loyalty_tier,d.loyalty_tier!=='none'?'hi':'')+rn('days_since_last_purchase',d.days_since_last_purchase,d.days_since_last_purchase>60?'warn':'')+rs('avg_order_value',d.avg_order_value)+'</div>';
 
+  // Tealium AudienceStream group
+  if(d.tlm_audience){
+    h+='<div class="idp-grp"><div class="idp-gl">Tealium AudienceStream</div>';
+    h+=rs('audience',d.tlm_audience,'hi');
+    if(d.cart_abandon_event) h+=rs('cart_abandon_event',d.cart_abandon_event,'warn');
+    if(d.hmid) h+=rs('hmid',d.hmid,'');
+    h+='</div>';
+  }
   if(body) body.innerHTML=h;
   if(ms) ms.textContent='Resolved in '+lat+'ms';
 }
 
 // ── INTEGRATION TAB ────────────────────────────────────────────────
 function closeAllModals(){
-  var tlm=document.getElementById('tlm-card-ovl');if(tlm)tlm.classList.remove('on');
   ['eml-ovl','sms-ovl','dsp-ovl','ofr-ovl'].forEach(function(id){
     var el=document.getElementById(id);if(el)el.classList.remove('on');
   });
@@ -1100,7 +1088,7 @@ function openOfr(){
 function closeOfr(){document.getElementById('ofr-ovl').classList.remove('on');document.body.style.overflow='';}
 function pickSmsV(i,el){
   document.querySelectorAll('.sms-v').forEach(function(v){v.classList.remove('on');});el.classList.add('on');
-  var vv=["A&F: Jake, we've missed you. New denim just dropped \u2014 and your 20% member discount is still waiting. Shop now \u2192 anf.com/denim Code: BACK20","A&F: Hey Jake! It's been a while. New men's denim in your size \u2014 your 20% is still on. Check it out \u2192 anf.com/denim Code: BACK20"];
+  var vv=["A&F: Jake, we've missed you. New denim just dropped \u2014 and your 20% member discount is still waiting. Shop now \u2192 anf.com/denim Code: DENIM20","A&F: Hey Jake! It's been a while. New men's denim in your size \u2014 your 20% is still on. Check it out \u2192 anf.com/denim Code: DENIM20"];
   var b=document.getElementById('sms-bubble');if(b)b.textContent=vv[i];
 }
 
@@ -1159,7 +1147,7 @@ function closeFav(){document.getElementById('fav-drawer').classList.remove('on')
 function closeDrawers(){closeCart();closeFav();}
 
 // ── ESC KEY ────────────────────────────────────────────────────────
-document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeEml();closeSms();closeDsp();closeOfr();closeIdp();closeIntTab();closeSignin();closeTlm();}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeEml();closeSms();closeDsp();closeOfr();closeIdp();closeIntTab();closeSignin();}});
 
 // ── INIT ───────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded',function(){
@@ -1169,135 +1157,3 @@ document.addEventListener('DOMContentLoaded',function(){
   document.getElementById('idp-tab').classList.add('on');
   setTimeout(function(){merkuryResolve('default');},120);
 });
-
-// ══ TEALIUM AUDIENCE CARD ══════════════════════════════════════════
-var TLM_CONFIG = {
-  maya: {
-    audName: 'Abandoned Cart — myAbercrombie Members',
-    audSize: '14,203 profiles matched · Last synced 4 min ago',
-    attrs: [
-      {k:'dentsu_id',          v:'4821A3F9C2E100D8',     cls:'hi'},
-      {k:'confidence_score',   v:'1 (deterministic)',     cls:'hi'},
-      {k:'loyalty_tier',       v:'myAbercrombie_gold',    cls:'hi'},
-      {k:'purchase_propensity',v:'high',                  cls:'hi'},
-      {k:'category_affinity',  v:'womens_dresses',        cls:''},
-      {k:'days_since_purchase',v:'14',                    cls:''},
-      {k:'email_reachable',    v:'true',                  cls:'hi'},
-      {k:'cart_abandon_event', v:'true (triggered)',      cls:'warn'},
-    ],
-    btnClass: 'email',
-    btnLabel: '&#128231; Send via Cordial — Abandoned Cart',
-    partnerNote: "Cordial ESP · Triggered send · Audience: Loyalty Gold + cart abandon",
-    action: 'email'
-  },
-  jake: {
-    audName: 'Lapsed Members — Men’s Affinity — SMS Eligible',
-    audSize: '2,841 profiles matched · Last synced 11 min ago',
-    attrs: [
-      {k:'dentsu_id',          v:'7133C6D2A8F200E1',     cls:'hi'},
-      {k:'confidence_score',     v:'2 (deterministic)',   cls:'hi'},
-      {k:'loyalty_tier',         v:'myAbercrombie_silver',cls:''},
-      {k:'days_since_purchase',  v:'91',                  cls:'warn'},
-      {k:'email_engagement',     v:'ee_lapsed',           cls:'warn'},
-      {k:'category_affinity',    v:'mens_denim',          cls:''},
-      {k:'preferred_channel',    v:'sms',                 cls:'hi'},
-      {k:'sms_reachable',        v:'true',                cls:'hi'},
-    ],
-    btnClass: 'sms',
-    btnLabel: '&#128242; Send via SMS Platform — Re-engagement',
-    partnerNote: "SMS platform · Suppressed from email · Routed via Tealium audience rule",
-    action: 'sms'
-  },
-  priya: {
-    audName: "Net-New Browsers — Women's High Intent — DSP",
-    audSize: '38,410 profiles matched · Last synced 2 min ago',
-    attrs: [
-      {k:'dentsu_id',          v:'9902B1E7D3F400C5',     cls:'hi'},
-      {k:'confidence_score',     v:'5 (probabilistic)',   cls:'warn'},
-      {k:'match_type',           v:'probabilistic',       cls:'warn'},
-      {k:'hmid',                 v:'A3F9B2C10041D8',      cls:''},
-      {k:'purchase_propensity',  v:'high',                cls:'hi'},
-      {k:'in_market_flag',       v:'Y',                   cls:'hi'},
-      {k:'loyalty_tier',         v:'none — no CRM record',cls:'warn'},
-      {k:'hh_income_range',      v:'hhi_band_7',          cls:''},
-    ],
-    btnClass: 'dsp',
-    btnLabel: '&#128444; Activate via DSP — Prospecting',
-    partnerNote: "DSP activation · No email on file · Targeting via Merkury HMID",
-    action: 'dsp'
-  }
-};
-
-var tlmPendingAction = null;
-
-function openTlm(key) {
-  var cfg = TLM_CONFIG[key]; if(!cfg) return;
-  tlmPendingAction = cfg.action;
-  document.getElementById('tlm-aud-name').textContent = cfg.audName;
-  document.getElementById('tlm-aud-size').textContent = cfg.audSize;
-  // Render attrs
-  var attrsEl = document.getElementById('tlm-attrs');
-  attrsEl.innerHTML = cfg.attrs.map(function(a){
-    return '<div class="tlm-attr-row"><span class="tlm-attr-k">'+a.k+'</span><span class="tlm-attr-v '+a.cls+'">'+a.v+'</span></div>';
-  }).join('');
-  // Send button
-  var btn = document.getElementById('tlm-send-btn');
-  btn.className = 'tlm-send-btn ' + cfg.btnClass;
-  btn.innerHTML = cfg.btnLabel;
-  document.getElementById('tlm-partner-note').textContent = cfg.partnerNote;
-  // Show
-  closeIntTab();
-  document.getElementById('tlm-card-ovl').classList.add('on');
-  document.body.style.overflow = 'hidden';
-}
-function closeTlm(){
-  document.getElementById('tlm-card-ovl').classList.remove('on');
-  document.body.style.overflow = '';
-  tlmPendingAction = null;
-}
-function tlmProceed(){
-  var action = tlmPendingAction;
-  closeTlm();
-  setTimeout(function(){
-    if(action === 'email') openEml();
-    else if(action === 'sms') openSms();
-    else if(action === 'dsp') openDsp();
-  }, 80);
-}
-</script>
-
-<!-- ══ TEALIUM AUDIENCE CARD ════════════════════════════════════════ -->
-<div id="tlm-card-ovl" onclick="if(event.target===this)closeTlm()">
-  <div class="tlm-card">
-    <div class="tlm-topbar">
-      <div class="tlm-topbar-left">
-        <div>
-          <div class="tlm-topbar-logo">Tealium AudienceStream</div>
-          <div class="tlm-topbar-sub">Audience Profile — Merkury Enriched</div>
-        </div>
-      </div>
-      <button class="tlm-x" onclick="closeTlm()">&#215;</button>
-    </div>
-    <div class="tlm-body">
-      <div class="tlm-section-label">Matched Audience</div>
-      <div class="tlm-audience-row">
-        <div class="tlm-audience-name" id="tlm-aud-name"></div>
-        <div class="tlm-audience-size" id="tlm-aud-size"></div>
-      </div>
-      <div class="tlm-section-label">Merkury Attributes Written to Profile</div>
-      <div class="tlm-attrs" id="tlm-attrs"></div>
-      <div class="tlm-flow-arrow">activating via</div>
-      <button class="tlm-send-btn" id="tlm-send-btn" onclick="tlmProceed()"></button>
-      <div class="tlm-partner-note" id="tlm-partner-note"></div>
-    </div>
-  </div>
-</div>
-
-</body>
-</html>"""
-
-with open('/home/claude/anf.html', 'w') as f:
-    f.write(html)
-print(f"Written: {len(html)} chars, {html.count(chr(10))} lines")
-ENDPY
-python3 /tmp/build_anf.py
