@@ -959,7 +959,7 @@ function swapHome(v){
     var sub=document.getElementById('hhero-sub'); if(sub) sub.textContent=v.sub;
     var c1=document.getElementById('hhero-c1'); if(c1) c1.textContent=v.c1;
     var c2=document.getElementById('hhero-c2'); if(c2){c2.textContent=v.c2||'';c2.style.display=v.c2?'inline-block':'none';}
-    if(v.bg){var hbg=document.getElementById('hhero-bg');if(hbg)hbg.style.backgroundImage="url('"+v.bg+"')";}}
+    if(v.bg){var hbg=document.getElementById('hhero-bg');if(hbg)hbg.style.backgroundImage="url('"+v.bg+"')";}
     t.style.opacity='1';
   },200);
 }
@@ -1157,3 +1157,6 @@ document.addEventListener('DOMContentLoaded',function(){
   document.getElementById('idp-tab').classList.add('on');
   setTimeout(function(){merkuryResolve('default');},120);
 });
+</script>
+</body>
+</html>
