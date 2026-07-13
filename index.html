@@ -14,7 +14,7 @@ window._svq.push(['_trackPageView']);
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--pr:#1a1a1a;--ac:#2d5a27;--wh:#fff;--off:#f2f0ed;--lt:#ebebeb;--bd:#d8d5cf;--tx:#1a1a1a;--tx2:#3f3c38;--tx3:#888580;--sf:'EB Garamond',Georgia,serif;--ss:'Inter','Helvetica Neue',Arial,sans-serif;--mw:1320px;--g:48px;--ah:38px;}
+:root{--pr:#1a1a1a;--ac:#2d5a27;--wh:#fff;--off:#f2f0ed;--lt:#ebebeb;--bd:#d8d5cf;--tx:#1a1a1a;--tx2:#3f3c38;--tx3:#888580;--sf:'EB Garamond',Georgia,serif;--ss:'Inter','Helvetica Neue',Arial,sans-serif;--mw:1320px;--g:48px;--ah:0px;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:var(--ss);color:var(--tx);background:var(--wh);overflow-x:hidden;}
 a{text-decoration:none;color:inherit;}
@@ -637,13 +637,6 @@ button{font-family:var(--ss);cursor:pointer;border:0;background:none;}
   </div>
 </div>
 
-<!-- ══ ANNOUNCE ══════════════════════════════════════════════════════ -->
-<div class="ann" id="ann-bar">
-  <span id="ann-txt">myAbercrombie Members Get 20% Off Entire Purchase | Free Shipping On Orders Over $99</span>
-  <a onclick="showPage('womens')">SHOP WOMEN'S</a>
-  <a onclick="showPage('mens')">SHOP MEN'S</a>
-</div>
-
 <!-- ══ NAV ═══════════════════════════════════════════════════════════ -->
 <div class="nwrap">
   <div class="nsub"><div class="nsub-inner"><span class="sbl on">A&amp;F</span><span class="sbl">abercrombie kids</span></div></div>
@@ -1023,7 +1016,6 @@ function renderGrid(id, prods){
 // (e.g. Jake's banner text) showing on pages that persona didn't own —
 // this is why Men's page kept showing "Jake" for other personas.
 function updateBanners(key){
-  var ann=document.getElementById('ann-bar'); if(ann) ann.style.display = (key==='maya') ? 'none' : 'flex';
   ['wpbnr','mpbnr'].forEach(function(id){var el=document.getElementById(id);if(el){el.classList.toggle('on',key!=='default');}});
   var wt=document.getElementById('wpbnr-t'), wp=document.getElementById('wpbnr-p');
   var mt=document.getElementById('mpbnr-t'), mp=document.getElementById('mpbnr-p');
