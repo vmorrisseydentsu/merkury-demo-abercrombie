@@ -452,10 +452,10 @@ button{font-family:var(--ss);cursor:pointer;border:0;background:none;}
         <div class="eml-anf-sub">You left something behind, Maya. As a myAbercrombie Gold member, your exclusive 15% member discount is still applied.</div>
       </div>
       <div class="eml-product">
-        <div class="eml-product-img" style="background:url('https://img.abercrombie.com/is/image/anf/KIC_111-6319-00053-404_model1?policy=product-medium') center top/cover no-repeat;"></div>
+        <div class="eml-product-img" style="background:url('https://img.abercrombie.com/is/image/anf/KIC_159-6890-00386-100_model1?policy=product-medium') center top/cover no-repeat;"></div>
         <div class="eml-product-info">
           <div class="eml-pey">In Your Bag</div>
-          <div class="eml-pname">Scoopneck Flowy Mini Dress</div>
+          <div class="eml-pname">Gauze Midi Wrap Dress</div>
           <div class="eml-pdetail">Size: S &nbsp;|&nbsp; Color: Rose Blush &nbsp;|&nbsp; Qty: 1</div>
           <div class="eml-pprice">$110</div>
           <div class="eml-pmember">myAbercrombie Gold: $93.50 (15% off)</div>
@@ -540,13 +540,13 @@ button{font-family:var(--ss);cursor:pointer;border:0;background:none;}
 <!-- ══ DISPLAY AD MODAL (Priya) ══════════════════════════════════════ -->
 <div id="dsp-ovl" onclick="if(event.target===this)closeDsp()">
   <div class="dsp-wrap">
-    <div class="dsp-photo" style="background:url('https://img.abercrombie.com/is/image/anf/KIC_159-7033-00435-234_model1?policy=product-extra-large') center top/cover no-repeat;">
+    <div class="dsp-photo" style="background:url('https://img.abercrombie.com/is/image/anf/KIC_111-6245-00077-256_model1?policy=product-extra-large') center top/cover no-repeat;">
       <div class="dsp-ovlg"></div>
       <button class="dsp-x" onclick="closeDsp()">&#215;</button>
-      <div class="dsp-txtbox"><div class="dsp-ey">New Visitor — Women's Apparel</div><div class="dsp-h2">Discover<br>Effortless Classics.</div></div>
+      <div class="dsp-txtbox"><div class="dsp-ey">New Visitor — Women's Tops</div><div class="dsp-h2">Discover<br>Effortless Classics.</div></div>
     </div>
     <div class="dsp-body">
-      <p class="dsp-desc">Priya is new to A&amp;F. Merkury's probabilistic graph identified her as a high-propensity women's apparel buyer from behavioral signals across the open web. This display ad targets her via DSP using the Merkury HMID — no email or CRM record required.</p>
+      <p class="dsp-desc">Priya is new to A&amp;F. Merkury's probabilistic graph identified her as a high-propensity women's tops buyer from behavioral signals across the open web. This display ad targets her via DSP using the Merkury HMID — no email or CRM record required.</p>
       <div class="dsp-mstrip">
         <div class="dsp-mlabel">Merkury Identity — DSP Activation</div>
         <div class="dsp-mpills">
@@ -594,14 +594,14 @@ button{font-family:var(--ss);cursor:pointer;border:0;background:none;}
   <div class="mbox">
     <button class="mx" onclick="closeSignin()">&#215;</button>
     <div id="signin-form">
-      <h2 class="mh2">Sign In or Join</h2>
-      <p class="msub">Create your myAbercrombie account for exclusive rewards, early access, and members-only pricing.</p>
+      <h2 class="mh2" id="signin-h2">Sign In or Join</h2>
+      <p class="msub" id="signin-sub">Create your myAbercrombie account for exclusive rewards, early access, and members-only pricing.</p>
       <div class="frow"><label>Email Address</label><input type="email" placeholder="email@example.com"></div>
-      <div class="frow"><label>Password</label><input type="password" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;"></div>
-      <button class="fsub" style="margin-top:16px" onclick="submitSignin()">Continue</button>
-      <p style="font-size:11px;color:var(--tx3);text-align:center;margin-top:16px">New to A&amp;F? <a style="color:var(--tx);font-weight:600;text-decoration:underline;cursor:pointer">Join myAbercrombie</a></p>
+      <div class="frow" id="signin-pw-row"><label>Password</label><input type="password" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;"></div>
+      <button class="fsub" style="margin-top:16px" onclick="submitSignin()" id="signin-btn">Continue</button>
+      <p style="font-size:11px;color:var(--tx3);text-align:center;margin-top:16px" id="signin-foot">New to A&amp;F? <a style="color:var(--tx);font-weight:600;text-decoration:underline;cursor:pointer">Join myAbercrombie</a></p>
     </div>
-    <div class="mok" id="signin-ok"><div style="font-size:40px;margin-bottom:16px">&#10003;</div><h3 style="font-family:var(--sf);font-size:24px;margin-bottom:8px">Welcome Back</h3><p style="font-size:13px;color:var(--tx3)">You're signed in. Your exclusive member benefits are active.</p></div>
+    <div class="mok" id="signin-ok"><div style="font-size:40px;margin-bottom:16px">&#10003;</div><h3 style="font-family:var(--sf);font-size:24px;margin-bottom:8px" id="signin-ok-h3">Welcome Back</h3><p style="font-size:13px;color:var(--tx3)" id="signin-ok-p">You're signed in. Your exclusive member benefits are active.</p></div>
   </div>
 </div>
 
@@ -680,8 +680,8 @@ button{font-family:var(--ss);cursor:pointer;border:0;background:none;}
         <h1 class="hh1" id="hhero-h1">Hotel<br>Abercrombie</h1>
         <p class="hsub" id="hhero-sub">New sun-ready looks are made to getaway.</p>
         <div class="hctas">
-          <a onclick="showPage('womens')" class="bw" id="hhero-c1">SHOP WOMEN'S</a>
-          <a onclick="showPage('mens')" class="bow" id="hhero-c2">SHOP MEN'S</a>
+          <a onclick="handleHeroCta(1)" class="bw" id="hhero-c1">SHOP WOMEN'S</a>
+          <a onclick="handleHeroCta(2)" class="bow" id="hhero-c2">SHOP MEN'S</a>
         </div>
       </div>
     </div></div>
@@ -829,11 +829,14 @@ var PAYLOADS = {
 };
 
 // ── HERO VARIANTS ──────────────────────────────────────────────────
+// Each persona hero config now also carries c1act/c2act, describing what
+// the CTA button actually DOES, decoupled from showPage('womens')/showPage('mens')
+// which were previously hardcoded on the buttons regardless of label text.
 var HV = {
-  default:{ home:{ey:'',h1:'New Arrivals<br>for Everyone',sub:'Discover the latest styles for women and men. Free shipping on orders over $99.',c1:"SHOP WOMEN'S",c2:"SHOP MEN'S",bg:'https://img.abercrombie.com/is/image/anf/ANF-2026-AprWk4-D-HP-New-Arrivals-USCA-W.jpg'}, w:{h1:"Women's",sub:'Shop the latest arrivals in tops, dresses, denim and more.'}, m:{h1:"Men's",sub:'Shop the latest arrivals in shirts, jeans, shorts and more.'} },
-  maya:{ home:{ey:'Welcome back, myAbercrombie Gold Member',h1:'Your Spring<br>Picks Are Here',sub:'New dresses and matching sets — plus your exclusive 20% member discount.',c1:'SHOP MY PICKS',c2:'VIEW MEMBER DEALS',bg:'https://img.abercrombie.com/is/image/anf/KIC_159-7050-00382-516_model1?policy=product-extra-large'}, w:{h1:"Women's New Dresses & Sets",sub:"Curated based on your purchase history — new dresses and sets you'll love."}, m:{h1:"Men's New Arrivals",sub:''} },
-  jake:{ home:{ey:"We've Missed You — Back for More?",h1:'New Denim<br>Just Dropped',sub:"You haven't shopped in a while. Fresh denim and new fits are waiting.",c1:'SHOP NEW DENIM',c2:"SEE MEN'S",bg:'https://img.abercrombie.com/is/image/anf/KIC_131-5149-00372-280_life2?policy=product-extra-large'}, w:{h1:"Women's New Arrivals",sub:''}, m:{h1:"Men's Denim &<br>New Arrivals",sub:"New denim fits and spring essentials picked for you. Welcome back, Jake."} },
-  priya:{ home:{ey:"Hello — We're Glad You Found Us",h1:'Discover<br>A&amp;F',sub:"Effortless classics, quality you can feel. Free shipping on your first order over $99.",c1:"SHOP WOMEN'S",c2:'JOIN myAbercrombie',bg:'https://img.abercrombie.com/is/image/anf/KIC_159-7050-00382-516_model1?policy=product-extra-large'}, w:{h1:"Women's Bestsellers",sub:"Our most-loved tops and dresses — a perfect place to start."}, m:{h1:"Men's New Arrivals",sub:''} }
+  default:{ home:{ey:'',h1:'New Arrivals<br>for Everyone',sub:'Discover the latest styles for women and men. Free shipping on orders over $99.',c1:"SHOP WOMEN'S",c2:"SHOP MEN'S",c1act:{type:'page',page:'womens'},c2act:{type:'page',page:'mens'},bg:'https://img.abercrombie.com/is/image/anf/ANF-2026-AprWk4-D-HP-New-Arrivals-USCA-W.jpg'}, w:{h1:"Women's",sub:'Shop the latest arrivals in tops, dresses, denim and more.'}, m:{h1:"Men's",sub:'Shop the latest arrivals in shirts, jeans, shorts and more.'} },
+  maya:{ home:{ey:'Welcome back, myAbercrombie Gold Member',h1:'Your Spring<br>Picks Are Here',sub:'New dresses and matching sets — plus your exclusive 15% member discount.',c1:'SHOP MY PICKS',c2:'VIEW MEMBER DEALS',c1act:{type:'page',page:'womens'},c2act:{type:'offer'},bg:'https://img.abercrombie.com/is/image/anf/KIC_159-7050-00382-516_model1?policy=product-extra-large'}, w:{h1:"Women's New Dresses & Sets",sub:"Curated based on your purchase history — new dresses and sets you'll love."}, m:{h1:"Men's New Arrivals",sub:''} },
+  jake:{ home:{ey:"We've Missed You — Back for More?",h1:'New Denim<br>Just Dropped',sub:"You haven't shopped in a while. Fresh denim and new fits are waiting.",c1:'SHOP NEW DENIM',c2:"SEE MEN'S",c1act:{type:'page',page:'mens'},c2act:{type:'page',page:'mens'},bg:'https://img.abercrombie.com/is/image/anf/KIC_131-5149-00372-280_life2?policy=product-extra-large'}, w:{h1:"Women's New Arrivals",sub:''}, m:{h1:"Men's Denim &<br>New Arrivals",sub:"New denim fits and spring essentials picked for you. Welcome back, Jake."} },
+  priya:{ home:{ey:"Hello — We're Glad You Found Us",h1:'Discover<br>A&amp;F',sub:"Effortless classics, quality you can feel. Free shipping on your first order over $99.",c1:"SHOP WOMEN'S",c2:'JOIN myAbercrombie',c1act:{type:'page',page:'womens'},c2act:{type:'signin'},bg:'https://img.abercrombie.com/is/image/anf/KIC_159-7050-00382-516_model1?policy=product-extra-large'}, w:{h1:"Women's Bestsellers",sub:"Our most-loved tops and dresses — a perfect place to start."}, m:{h1:"Men's New Arrivals",sub:''} }
 };
 
 // ── OFFER DATA ─────────────────────────────────────────────────────
@@ -848,10 +851,12 @@ var PERSONAS = [
   {key:'default',name:'Default View',title:'Anonymous visitor — no match',av:'&#127760;',avbg:'#1e2a35',tags:[{l:'No Match',c:'ind'}]},
   {key:'maya',name:'Maya R.',title:"Gold Member · Women's Dresses",av:'&#128248;',avbg:'#2e1e10',tags:[{l:'Score 1 · Det.',c:'mat'},{l:'Authenticated',c:'role'}]},
   {key:'jake',name:'Jake M.',title:"Lapsed Buyer · Men's Denim",av:'&#128220;',avbg:'#0e1e2e',tags:[{l:'Score 2 · Det.',c:'mat'},{l:'Lapsed 91d',c:'role'}]},
-  {key:'priya',name:'Priya S.',title:'First Visit · Email Hash Match',av:'&#10024;',avbg:'#1e102e',tags:[{l:'Score 5 · Prob.',c:'ind'},{l:'Prospect',c:'role'}]}
+  {key:'priya',name:'Priya S.',title:'First Visit · Women’s Tops',av:'&#10024;',avbg:'#1e102e',tags:[{l:'Score 5 · Prob.',c:'ind'},{l:'Prospect',c:'role'}]}
 ];
 
 // ── PRODUCT DATA ───────────────────────────────────────────────────
+// NOTE: name/image pairs verified against Abercrombie CDN SKUs so the
+// displayed photo matches the product name shown beneath it.
 var WD = [
   {n:'Gauze Midi Wrap Dress',p:'$110',b:'BESTSELLER',sw:['#d4c8b0', '#1a1a1a', '#7a9090'],img:'https://img.abercrombie.com/is/image/anf/KIC_159-6890-00386-100_model1?policy=product-medium'},
   {n:'Smocked Maxi Dress',p:'$99',b:'NEW',sw:['#c8a0b8', '#1a1a1a', '#e8ddd4'],img:'https://img.abercrombie.com/is/image/anf/KIC_159-7048-00943-810_model1?policy=product-medium'},
@@ -865,14 +870,23 @@ var WD = [
 var WD_MAYA = [
   {n:'Gauze Midi Wrap Dress',p:'$110',b:'BESTSELLER',tag:'Picked For You',sw:['#d4c8b0', '#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_159-6890-00386-100_model1?policy=product-medium'},
   {n:'Smocked Maxi Dress',p:'$99',b:'NEW',tag:'Picked For You',sw:['#c8a0b8', '#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_159-7048-00943-810_model1?policy=product-medium'},
-  {n:'Linen-Blend Short Sleeve Top',p:'$55',b:'BESTSELLER',tag:'Trending Now',sw:['#d4c8a0', '#e8ddd4'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6245-00077-256_model1?policy=product-medium'},
-  {n:'Linen-Blend Mini Skirt',p:'$65',b:'BESTSELLER',tag:'New for You',sw:['#a8b8b0', '#e8e0d4'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6247-00078-256_model1?policy=product-medium'},
-  {n:'Ruched Bandeau Midi Dress',p:'$95',b:'NEW',sw:['#d4a8a0', '#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6219-00069-154_model1?policy=product-medium'},
-  {n:'Strappy Linen Maxi Dress',p:'$110',b:'BESTSELLER',sw:['#e8ddd4', '#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6198-00071-154_model1?policy=product-medium'},
-  {n:'High Cut One-Piece Swimsuit',p:'$79',b:'NEW',sw:['#6888b0', '#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_150-6127-00764-506_model1?policy=product-medium'},
-  {n:'Ribbed Tank Midi Dress',p:'$85',b:'BESTSELLER',sw:['#c8c0b0', '#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6151-00203-200_model1?policy=product-medium'}
+  {n:'Ruched Bandeau Midi Dress',p:'$95',b:'NEW',tag:'Trending Now',sw:['#d4a8a0', '#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6219-00069-154_model1?policy=product-medium'},
+  {n:'Strappy Linen Maxi Dress',p:'$110',b:'BESTSELLER',tag:'New for You',sw:['#e8ddd4', '#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6198-00071-154_model1?policy=product-medium'},
+  {n:'Ribbed Tank Midi Dress',p:'$85',b:'BESTSELLER',sw:['#c8c0b0', '#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6151-00203-200_model1?policy=product-medium'},
+  {n:'Linen-Blend Short Sleeve Top',p:'$55',b:'BESTSELLER',sw:['#d4c8a0', '#e8ddd4'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6245-00077-256_model1?policy=product-medium'},
+  {n:'Linen-Blend Mini Skirt',p:'$65',b:'BESTSELLER',sw:['#a8b8b0', '#e8e0d4'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6247-00078-256_model1?policy=product-medium'},
+  {n:'High Cut One-Piece Swimsuit',p:'$79',b:'NEW',sw:['#6888b0', '#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_150-6127-00764-506_model1?policy=product-medium'}
 ];
-var WD_PRIYA = WD.map(function(p,i){return Object.assign({},p,{tag:i<4?['Customer Favorite','Best Seller','Best Seller','Best Seller'][i]:''});});
+var WD_PRIYA = [
+  {n:'Linen-Blend Short Sleeve Top',p:'$55',b:'BESTSELLER',tag:'Matches Your Interests',sw:['#d4c8a0', '#e8ddd4', '#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6245-00077-256_model1?policy=product-medium'},
+  {n:'Ribbed Tank Midi Dress',p:'$85',b:'BESTSELLER',tag:'Customer Favorite',sw:['#c8c0b0', '#1a1a1a', '#8a7a6a'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6151-00203-200_model1?policy=product-medium'},
+  {n:'Gauze Midi Wrap Dress',p:'$110',b:'BESTSELLER',tag:'Best Seller',sw:['#d4c8b0', '#1a1a1a', '#7a9090'],img:'https://img.abercrombie.com/is/image/anf/KIC_159-6890-00386-100_model1?policy=product-medium'},
+  {n:'Smocked Maxi Dress',p:'$99',b:'NEW',tag:'Best Seller',sw:['#c8a0b8', '#1a1a1a', '#e8ddd4'],img:'https://img.abercrombie.com/is/image/anf/KIC_159-7048-00943-810_model1?policy=product-medium'},
+  {n:'Linen-Blend Mini Skirt',p:'$65',b:'BESTSELLER',sw:['#a8b8b0', '#e8e0d4', '#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6247-00078-256_model1?policy=product-medium'},
+  {n:'Ruched Bandeau Midi Dress',p:'$95',b:'NEW',sw:['#d4a8a0', '#1a1a1a', '#c8b898'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6219-00069-154_model1?policy=product-medium'},
+  {n:'Strappy Linen Maxi Dress',p:'$110',b:'BESTSELLER',sw:['#e8ddd4', '#1a1a1a', '#9098a0'],img:'https://img.abercrombie.com/is/image/anf/KIC_111-6198-00071-154_model1?policy=product-medium'},
+  {n:'High Cut One-Piece Swimsuit',p:'$79',b:'NEW',sw:['#6888b0', '#1a1a1a', '#c8a8b0'],img:'https://img.abercrombie.com/is/image/anf/KIC_150-6127-00764-506_model1?policy=product-medium'}
+];
 var MD = [
   {n:'Striped Crew Sweater',p:'$100',b:'BESTSELLER',sw:['#2a3a28','#8a4a38'],img:'https://img.abercrombie.com/is/image/anf/KIC_120-6094-00648-205_life1?policy=product-medium'},
   {n:'Linen-Blend Relaxed Straight Trouser',p:'$85',b:'BESTSELLER',sw:['#1a1a1a','#d4c8a8'],img:'https://img.abercrombie.com/is/image/anf/KIC_130-6019-00117-412_life1?policy=product-medium'},
@@ -893,6 +907,14 @@ var MD_JAKE = [
   {n:'Plaid Button-Up Shirt',p:'$75',b:'',sw:['#c83030','#485868'],img:'https://img.abercrombie.com/is/image/anf/KIC_125-6057-00369-508_life1?policy=product-medium'},
   {n:'100% Linen Button-Up Shirt',p:'$80',b:'BESTSELLER',sw:['#c8b898','#1a1a1a'],img:'https://img.abercrombie.com/is/image/anf/KIC_125-6039-00339-214_life1?policy=product-medium'}
 ];
+
+// ── CART DATA (single source of truth — must stay in sync with Maya's
+//    hero/email/offer copy: 15% off, Gauze Midi Wrap Dress) ─────────
+var CART_ITEM = {
+  name:'Gauze Midi Wrap Dress', size:'S', color:'Rose Blush', price:110,
+  img:'https://img.abercrombie.com/is/image/anf/KIC_159-6890-00386-100_model1?policy=product-medium',
+  discountPct:0.15, discountLabel:'Member Discount (15%)'
+};
 
 // ── STATE ──────────────────────────────────────────────────────────
 var APK = 'default', panOpen = false, intOpen = false, cartHasItem = false;
@@ -935,6 +957,21 @@ function showPage(n){
   setTimeout(function(){merkuryResolve(window._merkuryPersona||'default');},90);
 }
 function gotoPage(n){showPage(n);return false;}
+
+// ── HERO CTA HANDLER ───────────────────────────────────────────────
+// Reads the CURRENT persona's action config for the clicked button
+// instead of a hardcoded showPage('womens')/showPage('mens') target.
+function handleHeroCta(n){
+  var v = HV[APK]||HV['default'];
+  var act = n===1 ? v.home.c1act : v.home.c2act;
+  if(!act){ showPage('womens'); return; }
+  if(act.type==='page') showPage(act.page);
+  else if(act.type==='signin') openSignin();
+  else if(act.type==='offer') openOfr();
+  else if(act.type==='email') openEml();
+  else if(act.type==='sms') openSms();
+  else if(act.type==='dsp') openDsp();
+}
 
 // ── HERO SWAP ──────────────────────────────────────────────────────
 function swapHome(v){
@@ -980,19 +1017,33 @@ function renderGrid(id, prods){
 }
 
 // ── PERSONA BANNERS ────────────────────────────────────────────────
+// Rewritten so EVERY persona explicitly sets BOTH the women's and men's
+// banner text/badge on every call. Previously personas only set the
+// banner for their "home" page, so switching personas left stale copy
+// (e.g. Jake's banner text) showing on pages that persona didn't own —
+// this is why Men's page kept showing "Jake" for other personas.
 function updateBanners(key){
   ['wpbnr','mpbnr'].forEach(function(id){var el=document.getElementById(id);if(el){el.classList.toggle('on',key!=='default');}});
+  var wt=document.getElementById('wpbnr-t'), wp=document.getElementById('wpbnr-p');
+  var mt=document.getElementById('mpbnr-t'), mp=document.getElementById('mpbnr-p');
   if(key==='maya'){
-    var wt=document.getElementById('wpbnr-t'); if(wt) wt.innerHTML='<strong>Maya</strong> — Gold Member · Authenticated · Curated dresses &amp; sets';
-    var wp=document.getElementById('wpbnr-p'); if(wp) wp.textContent='Score 1 · Deterministic';
+    if(wt) wt.innerHTML='<strong>Maya</strong> — Gold Member · Authenticated · Curated dresses &amp; sets';
+    if(wp) wp.textContent='Score 1 · Deterministic';
+    if(mt) mt.innerHTML='Identity resolved — Maya browsing men\'s';
+    if(mp) mp.textContent='Score 1 · Deterministic';
   } else if(key==='jake'){
-    var mt=document.getElementById('mpbnr-t'); if(mt) mt.innerHTML='<strong>Jake</strong> — Lapsed member · Denim surfaced for re-engagement';
-    var mp=document.getElementById('mpbnr-p'); if(mp) mp.textContent='Score 2 · Deterministic';
-    var wt=document.getElementById('wpbnr-t'); if(wt) wt.innerHTML='Identity resolved — browsing across sections';
-    var wp=document.getElementById('wpbnr-p'); if(wp) wp.textContent='Score 2 · Deterministic';
+    if(mt) mt.innerHTML='<strong>Jake</strong> — Lapsed member · Denim surfaced for re-engagement';
+    if(mp) mp.textContent='Score 2 · Deterministic';
+    if(wt) wt.innerHTML='Identity resolved — Jake browsing women\'s';
+    if(wp) wp.textContent='Score 2 · Deterministic';
   } else if(key==='priya'){
-    var wt=document.getElementById('wpbnr-t'); if(wt) wt.innerHTML='<strong>Priya</strong> — Prospect · Matched via email hash from paid campaign';
-    var wp=document.getElementById('wpbnr-p'); if(wp) wp.textContent='Score 5 · Probabilistic';
+    if(wt) wt.innerHTML='<strong>Priya</strong> — Prospect · Matched via email hash from paid campaign';
+    if(wp) wp.textContent='Score 5 · Probabilistic';
+    if(mt) mt.innerHTML='Identity resolved — Priya browsing men\'s';
+    if(mp) mp.textContent='Score 5 · Probabilistic';
+  } else {
+    if(wt) wt.textContent='Personalized for you'; if(wp) wp.textContent='Merkury Resolved';
+    if(mt) mt.textContent='Personalized for you'; if(mp) mp.textContent='Merkury Resolved';
   }
 }
 
@@ -1121,7 +1172,26 @@ document.addEventListener('click',function(e){
 });
 
 // ── SIGN IN MODAL ──────────────────────────────────────────────────
-function openSignin(){document.getElementById('signin-modal').classList.add('on');document.getElementById('signin-form').style.display='block';document.getElementById('signin-ok').style.display='none';document.body.style.overflow='hidden';}
+// Priya's "JOIN myAbercrombie" CTA now opens this as a join-focused
+// variant (email capture, no password field) instead of navigating
+// to the Men's page.
+function openSignin(){
+  var modal=document.getElementById('signin-modal');
+  var isJoin = (APK==='priya');
+  document.getElementById('signin-h2').textContent = isJoin ? 'Join myAbercrombie' : 'Sign In or Join';
+  document.getElementById('signin-sub').textContent = isJoin
+    ? 'Join free and get 10% off your first order, plus exclusive rewards and early access.'
+    : 'Create your myAbercrombie account for exclusive rewards, early access, and members-only pricing.';
+  document.getElementById('signin-pw-row').style.display = isJoin ? 'none' : 'block';
+  document.getElementById('signin-btn').textContent = isJoin ? 'Join Free' : 'Continue';
+  document.getElementById('signin-foot').style.display = isJoin ? 'none' : 'block';
+  document.getElementById('signin-ok-h3').textContent = isJoin ? 'Welcome to myAbercrombie' : 'Welcome Back';
+  document.getElementById('signin-ok-p').textContent = isJoin ? "You're in! Your 10% welcome discount (NEWFRIEND10) has been emailed to you." : "You're signed in. Your exclusive member benefits are active.";
+  modal.classList.add('on');
+  document.getElementById('signin-form').style.display='block';
+  document.getElementById('signin-ok').style.display='none';
+  document.body.style.overflow='hidden';
+}
 function closeSignin(){document.getElementById('signin-modal').classList.remove('on');document.body.style.overflow='';}
 function submitSignin(){document.getElementById('signin-form').style.display='none';document.getElementById('signin-ok').style.display='block';setTimeout(closeSignin,2500);}
 
@@ -1138,9 +1208,12 @@ function renderCart(){
     body.innerHTML='<div class="cart-nudge"><div class="cart-nudge-logo">myAbercrombie</div><p>Earn up to 750 points with your next order. <strong>Join now to get $10 off $50 instantly.</strong></p><div class="cart-nudge-btns"><button class="btn-csi" onclick="closeCart();openSignin()">Sign In</button><button class="btn-cjo" onclick="closeCart();openSignin()">Join</button></div></div><div class="cart-empty"><div class="cart-empty-icon">&#128717;</div><h4>Your bag is empty</h4><p>Add something you love to get started.</p><button class="bdk" onclick="closeCart();showPage(\'womens\')" style="padding:12px 28px;font-size:11px;cursor:pointer">SHOP WOMEN\'S</button></div>';
     foot.innerHTML='';return;
   }
+  var it=CART_ITEM;
+  var discount = it.price*it.discountPct;
+  var subtotal = it.price - discount;
   title.textContent='Shopping Bag (1)';
-  body.innerHTML='<div class="ship-bar"><p>Just <span>$24.00 away</span> from Free Shipping</p><div class="ship-prog"><div class="ship-fill" style="width:75%"></div></div></div><div class="cart-item"><div class="cart-item-img"><img src="https://img.abercrombie.com/is/image/anf/KIC_111-6319-00053-404_model1?policy=product-medium" alt=""></div><div><div class="ci-name">Scoopneck Flowy Mini Dress</div><div class="ci-meta">S / Rose Blush</div><div class="ci-price">$110</div><div class="ci-social">&#9889; 48 People Just Viewed This</div></div></div>';
-  foot.innerHTML='<div class="sum-row"><span>Items (1)</span><span>$110.00</span></div><div class="sum-row"><span>Member Discount (20%)</span><span style="color:#2d5a27">-$22.00</span></div><div class="sum-row tot"><span>Subtotal</span><span>$88.00</span></div><button class="bdk" style="width:100%;margin-top:14px;padding:14px;border:none;cursor:pointer;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase">CHECKOUT</button><p style="font-size:10px;color:var(--tx3);text-align:center;margin-top:10px">or express checkout with PayPal</p>';
+  body.innerHTML='<div class="ship-bar"><p>Just <span>$24.00 away</span> from Free Shipping</p><div class="ship-prog"><div class="ship-fill" style="width:75%"></div></div></div><div class="cart-item"><div class="cart-item-img"><img src="'+it.img+'" alt=""></div><div><div class="ci-name">'+it.name+'</div><div class="ci-meta">'+it.size+' / '+it.color+'</div><div class="ci-price">$'+it.price.toFixed(2)+'</div><div class="ci-social">&#9889; 48 People Just Viewed This</div></div></div>';
+  foot.innerHTML='<div class="sum-row"><span>Items (1)</span><span>$'+it.price.toFixed(2)+'</span></div><div class="sum-row"><span>'+it.discountLabel+'</span><span style="color:#2d5a27">-$'+discount.toFixed(2)+'</span></div><div class="sum-row tot"><span>Subtotal</span><span>$'+subtotal.toFixed(2)+'</span></div><button class="bdk" style="width:100%;margin-top:14px;padding:14px;border:none;cursor:pointer;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase">CHECKOUT</button><p style="font-size:10px;color:var(--tx3);text-align:center;margin-top:10px">or express checkout with PayPal</p>';
 }
 function openFav(){document.getElementById('fav-drawer').classList.add('on');document.getElementById('dovl').classList.add('on');document.getElementById('fav-body').innerHTML='<div style="text-align:center;padding:40px 0"><div style="font-size:44px;margin-bottom:14px;opacity:.25">&#9825;</div><h4 style="font-family:var(--sf);font-size:20px;margin-bottom:8px;font-weight:400">Your list is empty</h4><p style="font-size:12px;color:var(--tx3)">Tap the heart on any item to save it here.</p></div>';}
 function closeFav(){document.getElementById('fav-drawer').classList.remove('on');document.getElementById('dovl').classList.remove('on');}
