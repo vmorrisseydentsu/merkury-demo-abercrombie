@@ -700,7 +700,7 @@ button{font-family:var(--ss);cursor:pointer;border:0;background:none;}
       <div class="hgi" onclick="showPage('womens')"><div class="hgi-photo"><div class="hgi-photo-in" id="hg1" style="background-image:url('https://img.abercrombie.com/is/image/anf/ANF-2026-AprWk4-D-HP-New-Arrivals-USCA-W.jpg')"></div></div><div class="hgi-label" id="hg1-lbl">New Dresses</div><div class="hgi-sub">Women's</div></div>
       <div class="hgi" onclick="showPage('mens')"><div class="hgi-photo"><div class="hgi-photo-in" style="background-image:url('https://img.abercrombie.com/is/image/anf/ANF-2026-AprWk4-D-HP-New-Arrivals-USCA-M.jpg')"></div></div><div class="hgi-label" id="hg2-lbl">Spring Essentials</div><div class="hgi-sub">Men's</div></div>
       <div class="hgi" onclick="showPage('womens')"><div class="hgi-photo"><div class="hgi-photo-in" style="background-image:url('https://img.abercrombie.com/is/image/anf/ANF-2026-AprWk4-D-HP-Dresses-W.jpg')"></div></div><div class="hgi-label" id="hg3-lbl">Matching Sets</div><div class="hgi-sub">Women's</div></div>
-      <div class="hgi" onclick="showPage('mens')"><div class="hgi-photo"><div class="hgi-photo-in" style="background-image:url('https://img.abercrombie.com/is/image/anf/ANF-2026-AprWk4-D-HP-YPB-W.jpg')"></div></div><div class="hgi-label" id="hg4-lbl">Heritage Collection</div><div class="hgi-sub">Men's</div></div>
+      <div class="hgi" onclick="showPage('womens')"><div class="hgi-photo"><div class="hgi-photo-in" style="background-image:url('https://img.abercrombie.com/is/image/anf/ANF-2026-AprWk4-D-HP-YPB-W.jpg')"></div></div><div class="hgi-label" id="hg4-lbl">YPB Activewear</div><div class="hgi-sub">Women's</div></div>
     </div>
   </div></section>
 
@@ -1023,6 +1023,7 @@ function renderGrid(id, prods){
 // (e.g. Jake's banner text) showing on pages that persona didn't own —
 // this is why Men's page kept showing "Jake" for other personas.
 function updateBanners(key){
+  var ann=document.getElementById('ann-bar'); if(ann) ann.style.display = (key==='maya') ? 'none' : 'flex';
   ['wpbnr','mpbnr'].forEach(function(id){var el=document.getElementById(id);if(el){el.classList.toggle('on',key!=='default');}});
   var wt=document.getElementById('wpbnr-t'), wp=document.getElementById('wpbnr-p');
   var mt=document.getElementById('mpbnr-t'), mp=document.getElementById('mpbnr-p');
